@@ -1,9 +1,9 @@
 [
   {
-    "name": "marina_b_shopify",
+    "name": "theme_info",
     "theme_name": "Marina Buraschi",
-    "theme_version": "0.0.1",
-    "theme_author": "Fiasco",
+    "theme_version": "0.1.0",
+    "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
