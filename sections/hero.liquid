@@ -285,6 +285,7 @@
   .hero {
     position: relative;
     min-height: calc(var(--hero-min-height) - var(--hero-height-offset));
+    height: 100vh;
   }
 
   .hero[data-shopify-visual-preview] {
@@ -298,6 +299,7 @@
     overflow: hidden;
     border: var(--hero-border-width) var(--hero-border-style) rgb(var(--color-border-rgb) / var(--hero-border-opacity));
     min-height: inherit;
+    height: 100%;
     align-items: var(--vertical-alignment-mobile);
     justify-content: var(--horizontal-alignment);
     z-index: var(--layer-base);

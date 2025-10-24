@@ -823,9 +823,9 @@ h3,
 .h3,
 .h3.h3,
 .text-block.h3 > * {
-  font-family: 'RedVevet';
-  font-style: normal;
-  font-weight: 400;
+  font-family: var(--font-h3--family);
+  font-style: var(--font-h3--style);
+  font-weight: var(--font-h3--weight);
   font-size: var(--font-h3--size);
   line-height: var(--font-h3--line-height);
   letter-spacing: var(--font-h3--letter-spacing);
@@ -844,9 +844,9 @@ h3,
 h4,
 .h4.h4,
 .text-block.h4 > * {
-  font-family: 'RedVevet';
-  font-style: normal;
-  font-weight: 400;
+  font-family: var(--font-h4--family);
+  font-style: var(--font-h4--style);
+  font-weight: var(--font-h4--weight);
   font-size: var(--font-h4--size);
   line-height: var(--font-h4--line-height);
   letter-spacing: var(--font-h4--letter-spacing);
