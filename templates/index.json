@@ -56,6 +56,26 @@
     },
     "three_columns_text_and_img_UQ8zHe": {
       "type": "three-columns-text-and-img",
+      "blocks": {
+        "button_4XNQkP": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "VIEW MORE",
+            "link": "shopify://pages/about-us",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "button_4XNQkP"
+      ],
       "name": "Three Colums Text And Img",
       "settings": {
         "heading": "About Us",
@@ -63,8 +83,6 @@
         "image_1": "shopify://shop_images/image-1_569f1683-d9cb-47fd-a518-becf1aff3051.png",
         "image_2": "shopify://shop_images/image_9caf5758-1a79-4b5b-a4dc-886721d72f2e.png",
         "color_scheme": "",
-        "link_text": "View More",
-        "link_page": "about-us",
         "padding-block-start": 40,
         "padding-block-end": 40
       }

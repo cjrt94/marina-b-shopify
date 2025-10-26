@@ -15,12 +15,8 @@
           <p class="three-columns-text-and-img__paragraph">{{ section.settings.paragraph_1 }}</p>
         {% endif %}
 
-        <div class="section-buttons">
-          {% for block in section.blocks %}
-            {% if block.type == 'button' %}
-              {% render 'button', block: block %}
-            {% endif %}
-          {% endfor %}
+        <div class="three-columns-text-and-img__section-buttons">
+          {% content_for 'blocks' %}
         </div>
       </div>
 
@@ -73,6 +69,10 @@
     height: 80%;
     width: auto;
     margin-left: auto;
+  }
+
+  .three-columns-text-and-img__section-buttons{
+    margin-top: 48px;
   }
 {% endstylesheet %}
 
