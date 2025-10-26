@@ -4,17 +4,43 @@
   class="section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
   style="{% render 'spacing-style', settings: section.settings %}"
 >
-  <div class="page-width">
-    <div class="section">
-      <div class="text-with-two-columns__text">
-        {% if section.settings.paragraph_1 != blank %}
-          <p class="text-with-two-columns___paragraph">{{ section.settings.paragraph_1 }}</p>
+  <div class="page-width section">
+    <div class="three-columns-text-and-img__section">
+      <div class="three-columns-text-and-img__text">
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
         {% endif %}
-      </div>
-    </div>
 
-    <div class="section section__text-with-two-columns__images">
-      <div class="text-with-two-columns__images">
+        {% if section.settings.paragraph_1 != blank %}
+          <p class="three-columns-text-and-img__paragraph">{{ section.settings.paragraph_1 }}</p>
+        {% endif %}
+
+        <div class="section-buttons">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'button' %}
+                {% assign href = block.settings.button_url %}
+                {% if href == blank and block.settings.button_page != blank %}
+                  {% assign href = block.settings.button_page.url %}
+                {% endif %}
+
+                {% if href != blank %}
+                  <a
+                    href="{{ href }}"
+                    class="{{ block.settings.button_style | default: 'btn--primary' }}"
+                    {% if block.settings.open_in_new_tab %}
+                      target="_blank" rel="noopener"
+                    {% endif %}
+                  >
+                    {{ block.settings.button_text | default: block.settings.button_page.title }}
+                  </a>
+                {% endif %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="three-columns-text-and-img__images">
         {% if section.settings.image_1 != blank %}
           <img
             src="{{ section.settings.image_1 | image_url: width: 800 }}"
@@ -36,6 +62,34 @@
 </div>
 
 {% stylesheet %}
+  .three-columns-text-and-img__paragraph {
+    white-space: pre-line;
+  }
+
+  .three-columns-text-and-img__section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    align-items: center;
+  }
+
+  .three-columns-text-and-img__text {
+    grid-column: span 3;
+  }
+
+  .three-columns-text-and-img__images {
+    grid-column: span 9;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 24px;
+    align-items: end;
+  }
+
+  .three-columns-text-and-img__images img:nth-child(1) {
+    height: 80%;
+    width: auto;
+    margin-left: auto;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -71,17 +125,6 @@
       "default": "scheme-1"
     },
     {
-      "type": "text",
-      "id": "link_text",
-      "label": "Link text",
-      "default": "Read more"
-    },
-    {
-      "type": "page",
-      "id": "link_page",
-      "label": "Select a page"
-    },
-    {
       "type": "range",
       "id": "padding-block-start",
       "label": "Top padding (px)",
@@ -100,6 +143,46 @@
       "step": 1,
       "unit": "px",
       "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Custom URL"
+        },
+        {
+          "type": "page",
+          "id": "button_page",
+          "label": "Select a page"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open in new tab",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Style",
+          "options": [
+            { "value": "btn--primary", "label": "Primary" },
+            { "value": "btn--secondary", "label": "Secondary" }
+          ],
+          "default": "btn--primary"
+        }
+      ]
     }
   ],
   "presets": [

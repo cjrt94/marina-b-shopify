@@ -63,7 +63,8 @@
         "image_1": "shopify://shop_images/image-1_569f1683-d9cb-47fd-a518-becf1aff3051.png",
         "image_2": "shopify://shop_images/image_9caf5758-1a79-4b5b-a4dc-886721d72f2e.png",
         "color_scheme": "",
-        "link_page": "",
+        "link_text": "View More",
+        "link_page": "about-us",
         "padding-block-start": 40,
         "padding-block-end": 40
       }
