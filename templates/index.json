@@ -44,7 +44,6 @@
       "type": "text-with-two-columns",
       "name": "Text With Two Columns",
       "settings": {
-        "heading": "This is your section heading",
         "paragraph_1": "More than a fashion brand, we don’t just create beautiful garments — we raise awareness for the environment and our people.",
         "paragraph_2": "Enjoy a versatile and unique style that coexists harmoniously with the environment, and contributes to a better world with every choice.",
         "image_1": "shopify://shop_images/image_cda3f0be-20b4-4adb-83cc-454f59cb1e3a.png",
@@ -54,10 +53,25 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "three_columns_text_and_img_UQ8zHe": {
+      "type": "three-columns-text-and-img",
+      "name": "Three Colums Text And Img",
+      "settings": {
+        "heading": "About Us",
+        "paragraph_1": "We are an Alpaca brand born in Lima, and our commitment is to support more Peruvian women by integrating them into our supply chain as talented artisans who carry ancient textile knowledge.\n\nMore than a company, we are a family that seeks the continuous development of each of its members. Each person is a fundamental part of the growth and progress of this company, whose main goal is to preserve cultural heritage and promote the core of society — the family — through work, training, and the empowerment of our valued women, the foundation and pillar of every home.",
+        "image_1": "shopify://shop_images/image-1_569f1683-d9cb-47fd-a518-becf1aff3051.png",
+        "image_2": "shopify://shop_images/image_9caf5758-1a79-4b5b-a4dc-886721d72f2e.png",
+        "color_scheme": "",
+        "link_page": "",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "text_with_two_columns_ya3ncE"
+    "text_with_two_columns_ya3ncE",
+    "three_columns_text_and_img_UQ8zHe"
   ]
 }
