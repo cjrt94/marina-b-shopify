@@ -17,25 +17,18 @@
 
         <div class="section-buttons">
           {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'button' %}
-                {% assign href = block.settings.button_url %}
-                {% if href == blank and block.settings.button_page != blank %}
-                  {% assign href = block.settings.button_page.url %}
-                {% endif %}
-
-                {% if href != blank %}
-                  <a
-                    href="{{ href }}"
-                    class="{{ block.settings.button_style | default: 'btn--primary' }}"
-                    {% if block.settings.open_in_new_tab %}
-                      target="_blank" rel="noopener"
-                    {% endif %}
-                  >
-                    {{ block.settings.button_text | default: block.settings.button_page.title }}
-                  </a>
-                {% endif %}
-            {% endcase %}
+            {% if block.type == 'button' %}
+              {% render 'button',
+                link: block.settings.link,
+                label: block.settings.label,
+                open_in_new_tab: block.settings.open_in_new_tab,
+                style_class: block.settings.style_class,
+                width: block.settings.width,
+                custom_width: block.settings.custom_width,
+                width_mobile: block.settings.width_mobile,
+                custom_width_mobile: block.settings.custom_width_mobile
+              %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>
@@ -146,43 +139,8 @@
     }
   ],
   "blocks": [
-    {
-      "type": "button",
-      "name": "Button",
-      "settings": [
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button text",
-          "default": "Learn more"
-        },
-        {
-          "type": "url",
-          "id": "button_url",
-          "label": "Custom URL"
-        },
-        {
-          "type": "page",
-          "id": "button_page",
-          "label": "Select a page"
-        },
-        {
-          "type": "checkbox",
-          "id": "open_in_new_tab",
-          "label": "Open in new tab",
-          "default": false
-        },
-        {
-          "type": "select",
-          "id": "button_style",
-          "label": "Style",
-          "options": [
-            { "value": "btn--primary", "label": "Primary" },
-            { "value": "btn--secondary", "label": "Secondary" }
-          ],
-          "default": "btn--primary"
-        }
-      ]
+     {
+      "type": "button"
     }
   ],
   "presets": [
