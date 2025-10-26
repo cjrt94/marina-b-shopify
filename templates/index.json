@@ -86,11 +86,25 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "text_with_two_columns_img_fw_RdDRnE": {
+      "type": "text-with-two-columns-img-fw",
+      "name": "Two Columns Text And Full With Image",
+      "settings": {
+        "heading": "History",
+        "paragraph_1": "Founded in 2004, Marina Buraschi stands as the standard-bearer of the pioneer's legacy and its mission to showcase to Peru and the world garments of unparalleled quality.",
+        "paragraph_2": "Each piece in our distinguished collections is crafted with the finest Andean fibers, such as Alpaca and Vicuña, the result of a meticulous production process.",
+        "image_1": "shopify://shop_images/Group_38.png",
+        "color_scheme": "",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "text_with_two_columns_ya3ncE",
-    "three_columns_text_and_img_UQ8zHe"
+    "three_columns_text_and_img_UQ8zHe",
+    "text_with_two_columns_img_fw_RdDRnE"
   ]
 }

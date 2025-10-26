@@ -5,34 +5,31 @@
   style="{% render 'spacing-style', settings: section.settings %}"
 >
   <div class="page-width">
-    <div class="section">
-      <div class="text-with-two-columns__text">
+    <div class="section text-with-two-columns-img-fw__section">
+      <div class="text-with-two-columns-img-fw__text">
         {% if section.settings.heading != blank %}
-          <h2>{{ section.settings.heading }}</h2>
+          <div class="text-with-two-columns-img-fw__headline">
+            <h2>{{ section.settings.heading }}</h2>
+          </div>
         {% endif %}
 
-        {% if section.settings.paragraph_1 != blank %}
-          <p class="text-with-two-columns___paragraph">{{ section.settings.paragraph_1 }}</p>
-        {% endif %}
+        <div class="text-with-two-columns-img-fw__body">
+          {% if section.settings.paragraph_1 != blank %}
+            <p class="text-with-two-columns-img-fw__paragraph-1">{{ section.settings.paragraph_1 }}</p>
+          {% endif %}
 
-        {% if section.settings.paragraph_2 != blank %}
-          <p class="text-with-two-columns___paragraph">{{ section.settings.paragraph_2 }}</p>
-        {% endif %}
+          {% if section.settings.paragraph_2 != blank %}
+            <p class="text-with-two-columns-img-fw__paragraph-2">{{ section.settings.paragraph_2 }}</p>
+          {% endif %}
+        </div>
       </div>
     </div>
-    <div class="text-with-two-columns__images">
+
+    <div class="text-with-two-columns-img-fw__images">
       {% if section.settings.image_1 != blank %}
         <img
           src="{{ section.settings.image_1 | image_url: width: 800 }}"
           alt="{{ section.settings.image_1.alt | escape }}"
-          loading="lazy"
-        >
-      {% endif %}
-
-      {% if section.settings.image_2 != blank %}
-        <img
-          src="{{ section.settings.image_2 | image_url: width: 800 }}"
-          alt="{{ section.settings.image_2.alt | escape }}"
           loading="lazy"
         >
       {% endif %}
@@ -41,6 +38,41 @@
 </div>
 
 {% stylesheet %}
+  .text-with-two-columns-img-fw__section {
+    border-top: 0.3px solid var(--color-border);
+    border-bottom: 0.3px solid var(--color-border);
+  }
+
+  .text-with-two-columns-img-fw__text {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+
+  .text-with-two-columns-img-fw__headline {
+    grid-column: span 3;
+    border-right: 0.3px solid var(--color-border);
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .text-with-two-columns-img-fw__body {
+    padding: 48px 64px;
+    grid-column: span 9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 96px;
+    font-size: 16px;
+  }
+
+  .text-with-two-columns-img-fw__paragraph-1 {
+    margin: 0;
+  }
+
+  .text-with-two-columns-img-fw__paragraph-2 {
+    margin: 0;
+  }
 {% endstylesheet %}
 
 {% schema %}
