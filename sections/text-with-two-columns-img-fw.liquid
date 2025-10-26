@@ -32,10 +32,10 @@
           alt="{{ section.settings.image_1.alt | escape }}"
           loading="lazy"
         >
-        {% elseif section.settings.image_1 != blank %}
+      {% elsif section.settings.video_file != blank %}
         <div class="video-wrapper">
           <video
-            src="{{ section.settings.video_url }}"
+            src="{{ section.settings.video_file | file_url }}"
             controls
             {% if section.settings.autoplay %}
               autoplay muted loop
@@ -114,9 +114,9 @@
       "label": "First image"
     },
     {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
+      "type": "video",
+      "id": "video_file",
+      "label": "Upload video"
     },
     {
       "type": "checkbox",
