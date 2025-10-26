@@ -51,8 +51,8 @@
         "image_2": "shopify://shop_images/image-1.png",
         "color_scheme": "",
         "section_width": "page-width",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
