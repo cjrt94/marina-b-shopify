@@ -64,10 +64,10 @@
             "label": "VIEW MORE",
             "link": "shopify://pages/about-us",
             "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
+            "style_class": "button-secondary",
+            "width": "custom",
+            "custom_width": 70,
+            "width_mobile": "custom",
             "custom_width_mobile": 100
           },
           "blocks": {}

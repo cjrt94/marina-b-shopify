@@ -7,6 +7,10 @@
   <div class="page-width">
     <div class="section">
       <div class="text-with-two-columns__text">
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+
         {% if section.settings.paragraph_1 != blank %}
           <p class="text-with-two-columns___paragraph">{{ section.settings.paragraph_1 }}</p>
         {% endif %}
@@ -16,8 +20,6 @@
         {% endif %}
       </div>
     </div>
-
-    <div class="section section__text-with-two-columns__images">
       <div class="text-with-two-columns__images">
         {% if section.settings.image_1 != blank %}
           <img
@@ -40,52 +42,12 @@
 </div>
 
 {% stylesheet %}
-  .text-with-two-columns__text {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 48px;
-    padding-bottom: 48px;
-    font-size: 16px;
-  }
-
-  .text-with-two-columns___paragraph {
-    margin: 0;
-    padding-right: 30%;
-    font-weight: 300;
-  }
-
-  .text-with-two-columns___paragraph:nth-of-type(2) {
-     padding-left: 5%;
-  }
-
-  .section__text-with-two-columns__images {
-    border-top: 0.3px solid var(--color-border);
-    border-bottom: 0.3px solid var(--color-border);
-  }
-
-  .text-with-two-columns__images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .text-with-two-columns__images img {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-
-  .text-with-two-columns__images img:nth-of-type(1) {
-    padding-right: 48px;
-    border-right: 0.3px solid var(--color-border);
-  }
-
-  .text-with-two-columns__images img:nth-of-type(2) {
-    padding-left: 48px;
-  }
+ 
 {% endstylesheet %}
 
 {% schema %}
 {
-  "name": "Text With Two Columns",
+  "name": "Two Columns Text And FI",
   "settings": [
     {
       "type": "textarea",
@@ -93,7 +55,7 @@
       "label": "First paragraph",
       "default": "This is the first text block in your section."
     },
-    {
+      {
       "type": "textarea",
       "id": "paragraph_2",
       "label": "Second paragraph",
@@ -105,25 +67,10 @@
       "label": "First image"
     },
     {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Second image"
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
-    },
-    {
-      "type": "select",
-      "id": "section_width",
-      "label": "Section width",
-      "options": [
-        { "value": "page-width", "label": "Page width" },
-        { "value": "full-width", "label": "Full width" }
-      ],
-      "default": "page-width"
     },
     {
       "type": "range",
@@ -148,7 +95,7 @@
   ],
   "presets": [
     {
-      "name": "Text With Two Columns",
+      "name": "Two Columns Text And Full With Image",
       "category": "Custom"
     }
   ]
