@@ -32,6 +32,17 @@
           alt="{{ section.settings.image_1.alt | escape }}"
           loading="lazy"
         >
+        {% elseif section.settings.image_1 != blank %}
+        <div class="video-wrapper">
+          <video
+            src="{{ section.settings.video_url }}"
+            controls
+            {% if section.settings.autoplay %}
+              autoplay muted loop
+            {% endif %}
+            style="width:100%; height:auto;"
+          ></video>
+        </div>
       {% endif %}
     </div>
   </div>
@@ -101,6 +112,17 @@
       "type": "image_picker",
       "id": "image_1",
       "label": "First image"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false
     },
     {
       "type": "color_scheme",
