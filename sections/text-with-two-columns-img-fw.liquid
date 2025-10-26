@@ -35,8 +35,8 @@
       {% elsif section.settings.video_file != blank %}
         <div class="video-wrapper">
           <video
-            src="{{ section.settings.video_file | file_url }}"
-            controls
+            src="{{ section.settings.video_file.sources[0].url}}"
+            muted
             {% if section.settings.autoplay %}
               autoplay muted loop
             {% endif %}
