@@ -18,16 +18,7 @@
         <div class="section-buttons">
           {% for block in section.blocks %}
             {% if block.type == 'button' %}
-              {% render 'button',
-                link: block.settings.link,
-                label: block.settings.label,
-                open_in_new_tab: block.settings.open_in_new_tab,
-                style_class: block.settings.style_class,
-                width: block.settings.width,
-                custom_width: block.settings.custom_width,
-                width_mobile: block.settings.width_mobile,
-                custom_width_mobile: block.settings.custom_width_mobile
-              %}
+              {% render 'button', block: block %}
             {% endif %}
           {% endfor %}
         </div>
@@ -139,7 +130,7 @@
     }
   ],
   "blocks": [
-     {
+    {
       "type": "button"
     }
   ],
