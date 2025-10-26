@@ -823,8 +823,8 @@ h3,
 .h3,
 .h3.h3,
 .text-block.h3 > * {
-  font-family: var(--font-h3--family);
-  font-style: var(--font-h3--style);
+  font-family: 'RedVevet';
+  font-style: normal;
   font-weight: var(--font-h3--weight);
   font-size: var(--font-h3--size);
   line-height: var(--font-h3--line-height);

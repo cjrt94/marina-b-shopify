@@ -1,0 +1,142 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+
+<div
+  class="section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: section.settings %}"
+>
+  <div class="page-width">
+    <div class="section">
+      {% if section.settings.heading != blank %}
+        <div class="list-pages__heading">
+          <h2>{{ section.settings.heading }}</h2>
+        </div>
+      {% endif %}
+
+      <div class="list-pages__section">
+        {% for block in section.blocks %}
+          <div class="image-card" style="position: relative;">
+            {% if block.settings.image %}
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ block.settings.title | escape }}"
+                style="width:100%; height:auto; display:block;"
+              >
+            {% endif %}
+
+            <div
+              class="overlay"
+              style="
+                background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity | divided_by: 100.0 }});
+                position:absolute;
+                inset:0;
+              "
+            ></div>
+
+            <a
+              href="{{ block.settings.link }}"
+              class="content"
+              style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; color:white;"
+            >
+              {% if block.settings.title != blank %}
+                <h3>{{ block.settings.title }}</h3>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .list-pages__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .list-pages__heading{
+    text-align: center;
+    margin-bottom: 48px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "List of pages",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This is your section heading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_card",
+      "name": "Image Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Your title here"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 40
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link to page"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "List of pages",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

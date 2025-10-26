@@ -100,12 +100,67 @@
         "padding-block-start": 0,
         "padding-block-end": 48
       }
+    },
+    "list_pages_a4y7AH": {
+      "type": "list-pages",
+      "blocks": {
+        "image_card_TRzgKb": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/1.png",
+            "title": "Accessories",
+            "overlay_opacity": 40,
+            "link": "shopify://pages/page"
+          }
+        },
+        "image_card_yy4aDA": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/2.png",
+            "title": "Home",
+            "overlay_opacity": 40,
+            "link": "shopify://pages/page"
+          }
+        },
+        "image_card_wF6fcz": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/3.png",
+            "title": "About",
+            "overlay_opacity": 40,
+            "link": "shopify://pages/page"
+          }
+        },
+        "image_card_m4Txxa": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/4.png",
+            "title": "Vicuña",
+            "overlay_opacity": 40,
+            "link": "shopify://pages/about-us"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_TRzgKb",
+        "image_card_yy4aDA",
+        "image_card_wF6fcz",
+        "image_card_m4Txxa"
+      ],
+      "name": "List of pages",
+      "settings": {
+        "heading": "This is your section heading",
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "text_with_two_columns_ya3ncE",
     "three_columns_text_and_img_UQ8zHe",
-    "text_with_two_columns_img_fw_RdDRnE"
+    "text_with_two_columns_img_fw_RdDRnE",
+    "list_pages_a4y7AH"
   ]
 }
