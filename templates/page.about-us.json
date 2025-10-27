@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Marina Buraschi</p>",
+            "text": "<p>- Marina, Buraschi</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

@@ -795,7 +795,7 @@ h1,
 h2,
 .h2.h2,
 .text-block.h2 > * {
-  font-family: 'RedVevet';
+  font-family: 'Red Velvet';
   font-style: normal;
   font-weight: 400;
   font-size: var(--font-h2--size);
@@ -817,7 +817,7 @@ h3,
 .h3,
 .h3.h3,
 .text-block.h3 > * {
-  font-family: 'RedVevet';
+  font-family: 'Red Velvet';
   font-style: normal;
   font-weight: var(--font-h3--weight);
   font-size: var(--font-h3--size);
@@ -838,7 +838,7 @@ h3,
 h4,
 .h4.h4,
 .text-block.h4 > * {
-  font-family: 'RedVevet';
+  font-family: 'Red Velvet';
   font-style: normal;
   font-weight: var(--font-h4--weight);
   font-size: var(--font-h4--size);
