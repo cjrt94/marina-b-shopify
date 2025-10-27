@@ -1,0 +1,190 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "hero_AzCqKC": {
+      "type": "hero",
+      "blocks": {
+        "text_4P8bWV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Fibers</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_ezTJdL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The alpaca fiber used by Anntarah comes from breeders in the highlands of Peru, serving as the sole economic livelihood for 120,000 families. This way of life, rooted in ancient heritage passed down through generations, allows us to directly provide income and employment to 250 artisans from the region.</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_4P8bWV",
+        "text_ezTJdL"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/vicuna-animal-llama-in-front-of-volcanic-mountains-2025-03-08-22-51-17-utc_1.png",
+        "media_type_2": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#2828285c",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "animals_left_waQj9L": {
+      "type": "animals-left",
+      "name": "Animals Left",
+      "settings": {
+        "heading": "Alpaca",
+        "paragraph_1": "<p>Alpaca fiber is a naturally high quality material, celebrated for its silky softness, light weight, and remarkable thermal properties. Native to the Peruvian Andes, it offers a unique combination of elegance and performance — warmer than wool, softer than cashmere, and hypoallergenic by nature. With over 20 natural shades, it brings versatility and timeless beauty to any garment.</p><p>Sustainably sourced from high-altitude alpacas, this fiber is gently sheared without harm, supporting local communities and centuries-old Andean traditions. Every piece crafted with alpaca fiber reflects authenticity, sophistication, and a deep respect for the environment — a refined choice for those who value both comfort and conscious luxury.</p><p>There are two main types of alpacas: Huacaya and Suri. Huacaya alpacas make up approximately 85% of the total population. After shearing, local women carefully examine the fleece and classify it into different categories based on fiber fineness. This process yields several distinct types of fiber, including: Baby alpaca, Royal alpaca<br/>and Baby Suri alpaca</p>",
+        "image_1": "shopify://shop_images/image_64a296a8-3c36-4783-bd48-69c05507ccd0.png",
+        "image_2": "shopify://shop_images/fiber.png",
+        "paragraph_2": "<p>Subtle luster<br/>Exclusive selection<br/>Unmatched softness<br/>17-30 microns</p>",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "animals_right_WrHjcM": {
+      "type": "animals-right",
+      "name": "Animals Right",
+      "settings": {
+        "heading": "Baby Alpaca",
+        "paragraph_1": "<p>Baby alpaca is the crown jewel of alpaca fibers — exceptionally soft, delicately light, and naturally lustrous. Collected from the finest first shearings, it offers an unparalleled sensation against the skin, making it ideal for garments that blend sophistication with supreme comfort. Its warmth, breathability, and hypoallergenic qualities position it among the most precious natural fibers in the world.<br/><br/>Harvested sustainably in the high Andes, baby alpaca is a testament to expert craftsmanship and deep cultural heritage. With no need for chemical processing and over 20 natural shades available, it reflects a luxury that is both pure and conscious — perfect for those seeking timeless elegance with an ethical soul.</p>",
+        "image_1": "shopify://shop_images/image-1_cbaf66fc-f428-4d85-81b5-f0944f6aa5a4.png",
+        "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
+        "paragraph_2": "<p>High performance in extreme weather conditions<br/>Incredibly soft to the touch<br/>Wide range of natural colors<br/>22 microns</p>",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "animals_left_CMVHXq": {
+      "type": "animals-left",
+      "name": "Animals Left",
+      "settings": {
+        "heading": "Baby Suri Alpaca",
+        "paragraph_1": "<p>Baby Suri alpaca fiber is a rare and luxurious treasure, known for its silky luster, fluid drape, and feather-light feel. Unlike Huacaya alpacas, Suris produce long, lustrous locks with a natural sheen that gives garments an elegant, almost liquid appearance. The “baby” grade comes from the finest first shearing, offering a softness that rivals the most exclusive fibers in the world.</p><p>Sustainably sourced from select herds in the Peruvian Andes, Baby Suri alpaca is ethically collected and delicately processed to preserve its purity and beauty. Naturally hypoallergenic, breathable, and thermally insulating, this fiber is ideal for creating graceful, high-end pieces that embody refined comfort, artisanal excellence, and timeless luxury.</p>",
+        "image_1": "shopify://shop_images/image-2.png",
+        "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
+        "paragraph_2": "<p>Beautiful uniqueness<br/>Silky appearance<br/>Incredibly soft to the touch<br/>Exclusive and with countless qualities</p>",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "animals_right_pVFBqx": {
+      "type": "animals-right",
+      "name": "Animals Right",
+      "settings": {
+        "heading": "Royal Alpaca",
+        "paragraph_1": "<p>Royal alpaca represents the elite tier of alpaca fibers — even finer and more exquisite than baby alpaca. With a diameter of less than 19 microns, it offers an ultra-soft touch that rivals cashmere, yet with greater durability and natural thermal performance. Its silky feel, gentle warmth, and elegant drape make it a preferred choice for high-end garments that demand refined comfort.<br/><br/>Sourced from a select portion of the alpaca population in the Peruvian Andes, Royal alpaca is rare, ethically obtained, and entirely free of harsh treatments. Each piece crafted with this fiber embodies sophistication, tradition, and conscious luxury — a true indulgence for those who seek the finest nature has to offer.</p>",
+        "image_1": "shopify://shop_images/image-3.png",
+        "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
+        "paragraph_2": "<p>Subtle luster<br/>Silky appearance<br/>Beautiful uniqueness<br/>Incredibly soft to the touch<br/>19 Microns</p>",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "animals_left_J97ikJ": {
+      "type": "animals-left",
+      "name": "Animals Left",
+      "settings": {
+        "heading": "Vicuna",
+        "paragraph_1": "<p>Renowned as the finest and rarest animal fiber in the world, vicuña wool embodies pure luxury. Soft, lightweight, and naturally warm, it has been treasured since Inca times as a symbol of royalty and exclusivity. Its unmatched texture and subtle sheen make it one of the most desirable materials in high-end fashion.</p><p>Ethically gathered through the ancient Andean ritual called \"Chaccu\", vicuña fiber is harvested without harming the animal, preserving its freedom and well-being. Hand-selected and delicately processed, each garment reflects a deep respect for tradition, nature, and craftsmanship — offering a timeless experience of elegance and comfort.</p>",
+        "image_1": "shopify://shop_images/vicuna_cce51d49-98a3-401a-9c24-ef8a4e907f8a.png",
+        "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
+        "paragraph_2": "<p>Naturally hypoallergenic Celebrated as a National Symbol of Peru Known as the “Gold of the Andes,”<br/>Lightweight and thermo-regulatory<br/>11.6-12.8 microns</p>",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_AzCqKC",
+    "animals_left_waQj9L",
+    "animals_right_WrHjcM",
+    "animals_left_CMVHXq",
+    "animals_right_pVFBqx",
+    "animals_left_J97ikJ"
+  ]
+}
