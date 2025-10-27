@@ -36,12 +36,12 @@
             "menu_font_style": "regular",
             "type_font_primary_link": "body",
             "type_case_primary_link": "uppercase",
-            "menu_style": "featured_products",
+            "menu_style": "featured_collections",
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
-            "navigation_bar": false,
-            "color_scheme_navigation_bar": "",
+            "navigation_bar": true,
+            "color_scheme_navigation_bar": "scheme-5",
             "drawer_accordion": false,
             "drawer_accordion_expand_first": false,
             "drawer_dividers": false
@@ -49,6 +49,9 @@
           "blocks": {}
         }
       },
+      "custom_css": [
+        "#header-component {position: fixed; width: 100%; z-index: 2;}"
+      ],
       "settings": {
         "logo_position": "left",
         "menu_position": "center",

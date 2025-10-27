@@ -22,7 +22,7 @@
             "alignment": "left",
             "type_preset": "custom",
             "font": "var(--font-body--family)",
-            "font_size": "1rem",
+            "font_size": "1.125rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
@@ -31,7 +31,7 @@
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
-            "padding-block-start": 0,
+            "padding-block-start": 100,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>- Marina Buraschi , Founder</p>",
+            "text": "<p>Marina Buraschi</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -72,7 +72,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "video",
-        "video_1": "shopify://files/videos/Vicuna_Video.mp4",
+        "video_1": "shopify://files/videos/timelapse02-h264-420-3k-24-hq_QaBcjdxg.mp4",
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -103,7 +103,7 @@
       "name": "Three Colums Text And Img",
       "settings": {
         "heading": "Our Values",
-        "paragraph_1": "Timeless Quality\n We value excellence in every detail. Our garments are made to last, blending artisanal techniques with high-end materials.\n\nSustainability\n A deep respect for nature, animals, and people. We commit to conscious production, ethical sourcing, and long-term value.\n\nTransparency\n We act with honesty and clarity at every stage of our value chain, from the fiber to the final garment.\n\nAuthenticity\n We celebrate what is essential, genuine, and made with purpose. Our collections reflect a true and committed identity.",
+        "paragraph_1": "<p><strong>Timeless Quality</strong><br/> We value excellence in every detail. Our garments are made to last, blending artisanal techniques with high-end materials.<br/><br/><strong>Sustainability</strong><br/>A deep respect for nature, animals, and people. We commit to conscious production, ethical sourcing, and long-term value.<br/></p><p><strong>Transparency</strong><br/>We act with honesty and clarity at every stage of our value chain, from the fiber to the final garment.<br/><br/><strong>Authenticity</strong><br/>We celebrate what is essential, genuine, and made with purpose. Our collections reflect a true and committed identity.</p>",
         "image_1": "shopify://shop_images/image_01f740bc-00e9-44ac-9d75-9ff6699d7789.png",
         "image_2": "shopify://shop_images/image-1_abb10fc4-c29f-48de-b104-372ca8da0c24.png",
         "color_scheme": "",
