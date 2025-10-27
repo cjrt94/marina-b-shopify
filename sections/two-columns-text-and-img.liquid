@@ -4,44 +4,62 @@
   class="section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
   style="{% render 'spacing-style', settings: section.settings %}"
 >
-  <div class="page-width section">
-    <div class="three-columns-text-and-img__section">
-      <div class="three-columns-text-and-img__text">
-        {% if section.settings.heading != blank %}
-          <h2>{{ section.settings.heading }}</h2>
-        {% endif %}
-
-        {% if section.settings.paragraph_1 != blank %}
-          <p class="three-columns-text-and-img__paragraph">{{ section.settings.paragraph_1 }}</p>
-        {% endif %}
-
-        <div class="three-columns-text-and-img__section-buttons">
-          {% content_for 'blocks' %}
+  <div class="page-width two-columns-text-and-img__section">
+    <div class="section">
+      <div class="two-columns-text-and-img__wrap">
+        <div class="two-columns-text-and-img__images">
+          {% if section.settings.image_1 != blank %}
+            <img
+              src="{{ section.settings.image_1 | image_url: width: 800 }}"
+              alt="{{ section.settings.image_1.alt | escape }}"
+              loading="lazy"
+            >
+          {% endif %}
         </div>
-      </div>
 
-      <div class="three-columns-text-and-img__images">
-        {% if section.settings.image_1 != blank %}
-          <img
-            src="{{ section.settings.image_1 | image_url: width: 800 }}"
-            alt="{{ section.settings.image_1.alt | escape }}"
-            loading="lazy"
-          >
-        {% endif %}
+        <div class="two-columns-text-and-img__text">
+          {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+          {% endif %}
 
-        {% if section.settings.image_2 != blank %}
-          <img
-            src="{{ section.settings.image_2 | image_url: width: 800 }}"
-            alt="{{ section.settings.image_2.alt | escape }}"
-            loading="lazy"
-          >
-        {% endif %}
+          {% if section.settings.paragraph_1 != blank %}
+            <p class="two-columns-text-and-img__paragraph">{{ section.settings.paragraph_1 }}</p>
+          {% endif %}
+
+          <div class="two-columns-text-and-img__section-buttons">
+            {% content_for 'blocks' %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 {% stylesheet %}
+  .two-columns-text-and-img__section {
+    border-bottom: 0.3px solid var(--color-border);
+  }
+
+  .two-columns-text-and-img__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .two-columns-text-and-img__images {
+    padding-right: 48px;
+    border-right: 0.3px solid var(--color-border);
+    padding-bottom: 48px;
+    padding-top: 48px;
+  }
+
+  .two-columns-text-and-img__text {
+    padding-left: 48px;
+  }
+
+  .two-columns-text-and-img__text p {
+    margin: 0;
+  }
 {% endstylesheet %}
 
 {% schema %}
