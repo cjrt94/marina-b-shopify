@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_xNVChy": {
+      "type": "hero",
+      "blocks": {
+        "text_qjgYWE": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>My passion for excellence and nature has inspired me to create something meaningful and connected to my Peruvian roots.</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_4DgbwU": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p>- Marina Buraschi , Founder</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_qjgYWE",
+        "text_4DgbwU"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "video",
+        "video_1": "shopify://files/videos/Vicuna_Video.mp4",
+        "media_type_2": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-end",
+        "align_baseline": true,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-6",
+        "toggle_overlay": true,
+        "overlay_color": "#12121266",
+        "overlay_style": "solid",
+        "gradient_direction": "to bottom",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 100,
+        "padding-block-end": 72
+      }
+    },
+    "three_columns_text_and_img_cNbLKc": {
+      "type": "three-columns-text-and-img",
+      "name": "Three Colums Text And Img",
+      "settings": {
+        "heading": "Our Values",
+        "paragraph_1": "Timeless Quality\n We value excellence in every detail. Our garments are made to last, blending artisanal techniques with high-end materials.\n\nSustainability\n A deep respect for nature, animals, and people. We commit to conscious production, ethical sourcing, and long-term value.\n\nTransparency\n We act with honesty and clarity at every stage of our value chain, from the fiber to the final garment.\n\nAuthenticity\n We celebrate what is essential, genuine, and made with purpose. Our collections reflect a true and committed identity.",
+        "image_1": "shopify://shop_images/image_01f740bc-00e9-44ac-9d75-9ff6699d7789.png",
+        "image_2": "shopify://shop_images/image-1_abb10fc4-c29f-48de-b104-372ca8da0c24.png",
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 0
+      }
+    },
+    "text_with_two_columns_img_fw_XWNkK9": {
+      "type": "text-with-two-columns-img-fw",
+      "name": "Two Columns Text And Full With Image",
+      "settings": {
+        "heading": "Commitment to Excellence",
+        "paragraph_1": "Founded in 2004, Marina Buraschi stands as the standard-bearer of the pioneer's legacy and its mission to showcase to Peru and the world garments of unparalleled quality.",
+        "paragraph_2": "Each piece in our distinguished collections is crafted with the finest Andean fibers, such as Alpaca and Vicuña, the result of a meticulous production process.",
+        "image_1": "shopify://shop_images/image_acec85d8-4348-4bb4-b995-75b87e9cb9c8.png",
+        "autoplay": false,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "hero_xNVChy",
+    "three_columns_text_and_img_cNbLKc",
+    "text_with_two_columns_img_fw_XWNkK9"
+  ]
+}

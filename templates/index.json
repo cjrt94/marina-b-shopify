@@ -135,7 +135,7 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/4.png",
-            "title": "Vicuña",
+            "title": "Vicuna",
             "overlay_opacity": 40,
             "link": "shopify://pages/about-us"
           }

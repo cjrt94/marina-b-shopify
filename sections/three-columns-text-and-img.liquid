@@ -58,16 +58,16 @@
   }
 
   .three-columns-text-and-img__images {
-    grid-column: span 9;
+    grid-column: 5  / span 8;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 24px;
     align-items: end;
   }
 
   .three-columns-text-and-img__images img:nth-child(1) {
-    height: 75%;
-    width: auto;
+    height: 80%;
+    object-fit: cover;
     margin-left: auto;
     margin-bottom: 48px;
   }
@@ -88,7 +88,7 @@
       "default": "This is your section heading"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "paragraph_1",
       "label": "Description",
       "default": "This is the first text block in your section."

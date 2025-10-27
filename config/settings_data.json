@@ -62,10 +62,12 @@
     "cart_price_font": "secondary",
     "show_cart_note": false,
     "show_add_discount_code": true,
+    "drawer_color_scheme": "scheme-1",
     "drawer_drop_shadow": true,
     "icon_stroke": "default",
     "input_border_width": 1,
     "inputs_border_radius": 4,
+    "popover_color_scheme": "scheme-1",
     "popover_border_radius": 14,
     "popover_border": "none",
     "currency_code_enabled_product_pages": false,
@@ -279,7 +281,7 @@
       },
       "scheme-6": {
         "settings": {
-          "background": "rgba(0,0,0,0)",
+          "background": "#00000000",
           "foreground_heading": "#ffffff",
           "foreground": "#ffffff",
           "primary": "#ffffff",
