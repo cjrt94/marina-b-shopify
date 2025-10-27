@@ -1,0 +1,112 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+
+<div
+  class="section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: section.settings %}"
+>
+  <div class="page-width section">
+    <div class="three-columns-text-and-img__section">
+      <div class="three-columns-text-and-img__text">
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {% if section.settings.paragraph_1 != blank %}
+          <p class="three-columns-text-and-img__paragraph">{{ section.settings.paragraph_1 }}</p>
+        {% endif %}
+
+        <div class="three-columns-text-and-img__section-buttons">
+          {% content_for 'blocks' %}
+        </div>
+      </div>
+
+      <div class="three-columns-text-and-img__images">
+        {% if section.settings.image_1 != blank %}
+          <img
+            src="{{ section.settings.image_1 | image_url: width: 800 }}"
+            alt="{{ section.settings.image_1.alt | escape }}"
+            loading="lazy"
+          >
+        {% endif %}
+
+        {% if section.settings.image_2 != blank %}
+          <img
+            src="{{ section.settings.image_2 | image_url: width: 800 }}"
+            alt="{{ section.settings.image_2.alt | escape }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Text And Img Left",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This is your section heading"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_1",
+      "label": "Description",
+      "default": "<p>This is your section heading</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Columns Text And Img Left",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
