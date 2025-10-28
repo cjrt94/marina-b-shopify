@@ -48,35 +48,80 @@
           },
           "blocks": {}
         },
-        "text_ezTJdL": {
-          "type": "text",
+        "group_ewY7TK": {
+          "type": "group",
+          "name": "t:names.group",
           "settings": {
-            "text": "<p>The alpaca fiber used by Anntarah comes from breeders in the highlands of Peru, serving as the sole economic livelihood for 120,000 families. This way of life, rooted in ancient heritage passed down through generations, allows us to directly provide income and employment to 250 artisans from the region.</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 60,
+            "width_mobile": "custom",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 32,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "text_hHF7b6": {
+              "type": "text",
+              "settings": {
+                "text": "<p>The alpaca fiber used by Anntarah comes from breeders in the highlands of Peru, serving as the sole economic livelihood for 120,000 families. This way of life, rooted in ancient heritage passed down through generations, allows us to directly provide income and employment to 250 artisans from the region.</p>",
+                "width": "fit-content",
+                "max_width": "none",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 32,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_hHF7b6"
+          ]
         }
       },
       "block_order": [
         "text_4P8bWV",
-        "text_ezTJdL"
+        "group_ewY7TK"
       ],
       "name": "t:names.hero",
       "settings": {

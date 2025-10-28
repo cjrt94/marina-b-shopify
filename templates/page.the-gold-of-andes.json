@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "hero_VUbDin": {
+      "type": "hero",
+      "blocks": {
+        "text_rNMxVU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Art of the Chaccu</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_piTKxT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tradition, respect, and natural excellence</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_rNMxVU",
+        "text_piTKxT"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "video",
+        "video_1": "shopify://files/videos/Vicuna_Video.mp4",
+        "media_type_2": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "two_columns_text_and_img_J9EKkG": {
+      "type": "two-columns-text-and-img",
+      "name": "Two Columns Text And Img Left",
+      "settings": {
+        "heading": "Chaccu",
+        "paragraph_1": "<p>Each strand of vicuña fiber that makes up our pieces originates from an ancestral ritual celebrated high in the Peruvian Andes: the Chaccu. This millennia-old ceremony—passed down from pre-Incan cultures and preserved through time—is not merely a shearing act, but a gesture of reverence toward nature.</p><p>Once a year, highland communities gather over 4,000 meters above sea level, where the air is pure and the landscape sacred. There, through a delicate human corral, wild vicuñas are guided without violence, honoring their natural cycles and freedom. </p><p>After the shearing—performed manually and without harm—the vicuñas are released back into the heart of their natural habitat. This process can only be repeated every two or three years, and only under ideal conditions.Only adult animals are sheared, and the fiber collected is considered a gift: soft, rare, and of unmatched quality.</p>",
+        "image_1": "shopify://shop_images/Hero_cd5e8a06-8f07-4460-9e3d-d2d685b8aefc.png",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 40
+      }
+    },
+    "three_columns_text_and_img_x3bBJz": {
+      "type": "three-columns-text-and-img",
+      "name": "Three Colums Text And Img",
+      "settings": {
+        "heading": "Unique Value",
+        "paragraph_1": "<p><strong>Natural scarcity </strong></p><p>A single vicuña produces only a few grams of fiber every several years.<br/><br/><strong>Artisanal process </strong></p><p>From the communal ritual to the manual shearing, every step is guided by respect and precision.<br/><br/><strong>Challenging access</strong> </p><p>The Andean environment presents both logistical and human challenges that only deeply committed local communities can overcome.<br/><br/><strong>Unrivaled quality</strong></p><p>Measuring just 12 microns in diameter, vicuña fiber is the finest and most exclusive in the world. Its texture—ethereal, warm, and feather-light—is unlike any other.</p>",
+        "image_3": "shopify://shop_images/Isotype.png",
+        "image_1": "shopify://shop_images/image_45054ca8-6be6-429c-b63c-d32a7790149f.png",
+        "image_2": "shopify://shop_images/image-1_1f402a0d-f9ca-4006-87bf-331065334763.png",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 40
+      }
+    },
+    "text_with_two_columns_img_fw_4FKxwT": {
+      "type": "text-with-two-columns-img-fw",
+      "name": "Two Columns Text And Full With Image",
+      "settings": {
+        "heading": "A Luxury ThatRespects Life",
+        "paragraph_1": "Owning a garment made with vicuña fiber is not just about wearing elegance — it's about honoring a living tradition",
+        "paragraph_2": "supporting the livelihoods of ancestral communities, and celebrating the harmony between humans and nature.",
+        "image_1": "shopify://shop_images/hero_2.png",
+        "autoplay": false,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_VUbDin",
+    "two_columns_text_and_img_J9EKkG",
+    "three_columns_text_and_img_x3bBJz",
+    "text_with_two_columns_img_fw_4FKxwT"
+  ]
+}
