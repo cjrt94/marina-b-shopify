@@ -23,11 +23,18 @@
   elsif section.settings.enable_transparent_header_collection and template.name == 'collection'
     assign transparent = 'always'
     assign transparent_color_scheme = section.settings.collection_color_scheme
-  elsif template.name == 'about-us'
+  elsif section.settings.enable_transparent_header_about_us and page.handle == 'about-us'
     assign transparent = 'always'
-    assign transparent_color_scheme = section.settings.collection_color_scheme
+    assign transparent_color_scheme = section.settings.about_us_color_scheme
+  elsif section.settings.enable_transparent_header_our_fibers and page.handle == 'our-fibers'
+    assign transparent = 'always'
+    assign transparent_color_scheme = section.settings.our_fibers_color_scheme
+  elsif section.settings.enable_transparent_header_the_gold_of_andes and page.handle == 'the-gold-of-andes'
+    assign transparent = 'always'
+    assign transparent_color_scheme = section.settings.the_gold_of_andes_color_scheme
   endif
   
+
   if section.settings.enable_sticky_header == 'always'
     assign sticky = 'always'
   elsif section.settings.enable_sticky_header == 'scroll-up'
@@ -69,6 +76,7 @@
   if shop.customer_accounts_enabled
     assign search_class = 'mobile:hidden'
   endif
+
 
   # Handle localization positioning
   if section.settings.localization_position == 'left'
@@ -998,8 +1006,7 @@
       "type": "color_scheme",
       "id": "color_scheme_transparent",
       "label": "t:settings.inverse",
-      "default": "primary",
-      "visible_if": "{{ section.settings.enable_transparent_header_home or section.settings.enable_transparent_header_product or section.settings.enable_transparent_header_collection }}"
+      "default": "primary"
     },
     {
       "type": "header",
@@ -1081,6 +1088,89 @@
       ],
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_collection }}"
+    },
+     {
+      "type": "header",
+      "content": "About Us Page"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_about_us",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "about_us_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_header_about_us }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Our Fibers Page"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_our_fibers",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "our_fibers_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_header_our_fibers }}"
+    },
+
+    {
+      "type": "header",
+      "content": "The Gold of the Andes"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_the_gold_of_andes",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "the_gold_of_andes_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_header_the_gold_of_andes }}"
     }
   ],
   "presets": []

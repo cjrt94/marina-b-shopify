@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign block_settings = block.settings
   assign menu = block_settings.menu
@@ -127,6 +125,19 @@
   .menu--caret .icon-plus,
   .menu--plus .icon-caret {
     display: none;
+  }
+
+  .mega-menu {
+    padding-top: 32px;
+    border-top: 0.5px solid #EFE8D8;
+  }
+
+  .mega-menu__link--parent{
+    margin-bottom: 16px;
+  }
+
+  .mega-menu__link{
+    margin-bottom: 8px;
   }
 {% endstylesheet %}
 
