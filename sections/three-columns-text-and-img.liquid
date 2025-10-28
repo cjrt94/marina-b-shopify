@@ -18,6 +18,16 @@
         <div class="three-columns-text-and-img__section-buttons">
           {% content_for 'blocks' %}
         </div>
+
+        {% if section.settings.image_3 != blank %}
+          <div class="three-columns-text-and-img__isotype">
+            <img
+              src="{{ section.settings.image_3 | image_url: width: 800 }}"
+              alt="{{ section.settings.image_3.alt | escape }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
       </div>
 
       <div class="three-columns-text-and-img__images">
@@ -58,7 +68,7 @@
   }
 
   .three-columns-text-and-img__images {
-    grid-column: 5  / span 8;
+    grid-column: 5 / span 8;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 24px;
@@ -72,8 +82,17 @@
     margin-bottom: 48px;
   }
 
-  .three-columns-text-and-img__section-buttons{
+  .three-columns-text-and-img__section-buttons {
     margin-top: 48px;
+  }
+
+  .three-columns-text-and-img__isotype {
+    margin-top: 64px;
+  }
+
+  .three-columns-text-and-img__isotype img {
+    height: 64px;
+    width: auto;
   }
 {% endstylesheet %}
 
@@ -92,6 +111,11 @@
       "id": "paragraph_1",
       "label": "Description",
       "default": "<p>This is your section heading</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Isotype"
     },
     {
       "type": "image_picker",

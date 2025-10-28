@@ -1,0 +1,53 @@
+<div>
+  <div class="product-divider__block">
+    <div class="product-divider__image">
+      <img
+        src="{{ block.settings.image_1 | image_url: width: 80 }}"
+        alt="{{ block.settings.image_1.alt | escape }}"
+        loading="lazy">
+    </div>
+    <div>
+      {% if block.settings.heading != blank %}
+        <h6>{{ block.settings.heading }}</h6>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+.product-divider__block{
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.product-divider__image img{
+  height: 24px;
+  width: auto;
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product Divider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This is your section heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Isotype"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Divider"
+    }
+  ]
+}
+{% endschema %}

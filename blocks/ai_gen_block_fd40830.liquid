@@ -1,0 +1,400 @@
+{% doc %}
+  @prompt
+    I need to implement a color picker for product variants.
+    Each variant has a metafield named variant.metafields.custom.hex_color that stores the HEX value selected in the admin.
+    I want to access this metafield in Liquid and render a color circle for each variant option on the product page.
+    
+    Additionally, when a user selects a color circle, the corresponding variant should be selected automatically.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-variant-color-picker-{{ ai_gen_id }} {
+    margin: {{ block.settings.spacing }}px 0;
+  }
+
+  .ai-variant-color-picker__label-{{ ai_gen_id }} {
+    display: block;
+    margin-bottom: 12px;
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 300;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-variant-color-picker__options-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: {{ block.settings.gap }}px;
+  }
+
+  .ai-variant-color-picker__option-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-variant-color-picker__input-{{ ai_gen_id }} {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .ai-variant-color-picker__swatch-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.swatch_size }}px;
+    height: {{ block.settings.swatch_size }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+    cursor: pointer;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .ai-variant-color-picker__swatch-{{ ai_gen_id }}:hover {
+    transform: scale(1.1);
+  }
+
+  .ai-variant-color-picker__input-{{ ai_gen_id }}:checked + .ai-variant-color-picker__swatch-{{ ai_gen_id }} {
+    border-color: {{ block.settings.selected_border_color }};
+    border-width: {{ block.settings.selected_border_width }}px;
+    box-shadow: 0 0 0 {{ block.settings.selected_ring_width }}px {{ block.settings.selected_ring_color }};
+  }
+
+  .ai-variant-color-picker__input-{{ ai_gen_id }}:disabled + .ai-variant-color-picker__swatch-{{ ai_gen_id }} {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-variant-color-picker__input-{{ ai_gen_id }}:disabled + .ai-variant-color-picker__swatch-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: {{ block.settings.unavailable_line_color }};
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .ai-variant-color-picker__tooltip-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: {{ block.settings.tooltip_bg_color }};
+    color: {{ block.settings.tooltip_text_color }};
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .ai-variant-color-picker__option-{{ ai_gen_id }}:hover .ai-variant-color-picker__tooltip-{{ ai_gen_id }} {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-variant-color-picker__swatch-{{ ai_gen_id }} {
+      width: {{ block.settings.swatch_size | times: 0.9 }}px;
+      height: {{ block.settings.swatch_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<variant-color-picker-{{ ai_gen_id }}
+  class="ai-variant-color-picker-{{ ai_gen_id }}"
+  data-product-id="{{ product.id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.show_label %}
+    <label class="ai-variant-color-picker__label-{{ ai_gen_id }}">
+      {{ block.settings.label_text }}: {{ product.selected_variant.title }}
+    </label>
+  {% endif %}
+
+  <div class="ai-variant-color-picker__options-{{ ai_gen_id }}">
+    {% for variant in product.variants %}
+      {% assign hex_color = variant.metafields.custom.hex_color %}
+      
+      {% if hex_color != blank %}
+        {% assign is_available = variant.available %}
+        {% assign is_selected = false %}
+        
+        {% if product.selected_or_first_available_variant.id == variant.id %}
+          {% assign is_selected = true %}
+        {% endif %}
+
+        <div class="ai-variant-color-picker__option-{{ ai_gen_id }}">
+          <input
+            type="radio"
+            id="variant-{{ ai_gen_id }}-{{ variant.id }}"
+            name="variant-{{ ai_gen_id }}"
+            value="{{ variant.id }}"
+            class="ai-variant-color-picker__input-{{ ai_gen_id }}"
+            data-variant-id="{{ variant.id }}"
+            data-variant-url="{{ variant.url }}"
+            {% if is_selected %}checked{% endif %}
+            {% unless is_available %}disabled{% endunless %}
+          >
+          <label
+            for="variant-{{ ai_gen_id }}-{{ variant.id }}"
+            class="ai-variant-color-picker__swatch-{{ ai_gen_id }}"
+            style="background-color: {{ hex_color }};"
+            aria-label="{{ variant.title }}"
+          ></label>
+          
+          {% if block.settings.show_tooltip %}
+            <span class="ai-variant-color-picker__tooltip-{{ ai_gen_id }}">
+              {{ variant.title }}
+              {% unless is_available %}
+                - {{ block.settings.unavailable_text }}
+              {% endunless %}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</variant-color-picker-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VariantColorPicker{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.inputs = this.querySelectorAll('.ai-variant-color-picker__input-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.inputs.forEach((input) => {
+          input.addEventListener('change', (event) => {
+            if (event.target.checked && !event.target.disabled) {
+              const variantId = event.target.dataset.variantId;
+              const variantUrl = event.target.dataset.variantUrl;
+              
+              this.selectVariant(variantId, variantUrl);
+            }
+          });
+        });
+      }
+
+      selectVariant(variantId, variantUrl) {
+        const productForm = document.querySelector('form[action*="/cart/add"]');
+        
+        if (productForm) {
+          const variantInput = productForm.querySelector('[name="id"]');
+          if (variantInput) {
+            variantInput.value = variantId;
+            variantInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+
+        if (variantUrl) {
+          const url = new URL(window.location.href);
+          url.searchParams.set('variant', variantId);
+          window.history.replaceState({}, '', url);
+        }
+
+        this.dispatchEvent(new CustomEvent('variant-change', {
+          bubbles: true,
+          detail: { variantId: variantId }
+        }));
+      }
+    }
+
+    customElements.define('variant-color-picker-{{ ai_gen_id }}', VariantColorPicker{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Variant color picker",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_label",
+      "label": "Show label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Label text",
+      "default": "Color"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Swatches"
+    },
+    {
+      "type": "range",
+      "id": "swatch_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Swatch size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between swatches",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "header",
+      "content": "Selected state"
+    },
+    {
+      "type": "range",
+      "id": "selected_border_width",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "selected_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "selected_ring_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Ring width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "selected_ring_color",
+      "label": "Ring color",
+      "default": "#00000033"
+    },
+    {
+      "type": "header",
+      "content": "Unavailable variants"
+    },
+    {
+      "type": "color",
+      "id": "unavailable_line_color",
+      "label": "Line color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "unavailable_text",
+      "label": "Unavailable text",
+      "default": "Sold out"
+    },
+    {
+      "type": "header",
+      "content": "Tooltip"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tooltip",
+      "label": "Show tooltip on hover",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "tooltip_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tooltip_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Variant color picker"
+    }
+  ]
+}
+{% endschema %}

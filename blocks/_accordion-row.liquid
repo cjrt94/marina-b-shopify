@@ -8,7 +8,7 @@
   {% endif %}
 >
   <details
-    class="details"
+    class="details details__accordion"
     data-testid="accordion-details"
     {{ block.shopify_attributes }}
   >
@@ -35,6 +35,11 @@
 </accordion-custom>
 
 {% stylesheet %}
+  .details__accordion{
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
   .details__icon {
     height: auto;
     margin-inline-end: var(--margin-xs);

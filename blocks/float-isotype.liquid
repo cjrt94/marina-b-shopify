@@ -1,0 +1,40 @@
+<div>
+  <div class="float-isotype__image">
+    <img
+      src="{{ block.settings.image_1 | image_url: width: 80 }}"
+      alt="{{ block.settings.image_1.alt | escape }}"
+      loading="lazy"
+    >
+  </div>
+</div>
+
+{% stylesheet %}
+  .float-isotype__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .float-isotype__image img {
+    height: 90px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Float Isotype",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Isotype"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Float Isotype"
+    }
+  ]
+}
+{% endschema %}
