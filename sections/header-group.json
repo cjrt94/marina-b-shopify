@@ -84,7 +84,9 @@
         "enable_transparent_header_our_fibers": true,
         "our_fibers_color_scheme": "default",
         "enable_transparent_header_the_gold_of_andes": true,
-        "the_gold_of_andes_color_scheme": "default"
+        "the_gold_of_andes_color_scheme": "default",
+        "enable_transparent_terms": true,
+        "terms_color_scheme": "default"
       }
     }
   },

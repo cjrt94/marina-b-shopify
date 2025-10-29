@@ -5,12 +5,41 @@
   style="{% render 'spacing-style', settings: section.settings %}"
 >
   <div class="page-width section">
-   
+    <div class="general-page-terms__wrap">
+      {% if section.settings.heading != blank %}
+        <div class="general-page-terms__heading">
+          <h5>{{ section.settings.heading }}</h5>
+        </div>
+      {% endif %}
+    </div>
+    <div class="general-page-terms__wrap">
+      {% if section.settings.paragraph_1 != blank %}
+        <div class="general-page-terms__body">
+          {{ section.settings.paragraph_1 }}
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 
 {% stylesheet %}
- 
+  .general-page-terms__wrap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .general-page-terms__heading {
+    grid-column: span 3;
+  }
+
+  .general-page-terms__heading h5 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .general-page-terms__body {
+    grid-column: 4 / span 6;
+  }
 {% endstylesheet %}
 
 {% schema %}

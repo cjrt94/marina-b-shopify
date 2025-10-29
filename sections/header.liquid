@@ -32,6 +32,9 @@
   elsif section.settings.enable_transparent_header_the_gold_of_andes and page.handle == 'the-gold-of-the-andes'
     assign transparent = 'always'
     assign transparent_color_scheme = section.settings.the_gold_of_andes_color_scheme
+  elsif section.settings.enable_transparent_terms or page.handle == 'terms-and-conditions' or  page.handle == 'privacy-policy' or  page.handle == 'return'  or  page.handle == 'shipping'
+    assign transparent = 'always'
+    assign transparent_color_scheme = section.settings.terms_color_scheme   
   endif
   
 
@@ -1116,7 +1119,6 @@
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_about_us }}"
     },
-
     {
       "type": "header",
       "content": "Our Fibers Page"
@@ -1171,6 +1173,34 @@
       ],
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_the_gold_of_andes }}"
+    },
+
+     {
+      "type": "header",
+      "content": "Terms"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_terms",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "terms_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_terms }}"
     }
   ],
   "presets": []
