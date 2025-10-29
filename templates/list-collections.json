@@ -497,7 +497,7 @@
       },
       "name": "t:names.products_grid",
       "settings": {
-        "collection": "scarves",
+        "collection": "shawls",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
@@ -706,7 +706,7 @@
       },
       "name": "t:names.products_grid",
       "settings": {
-        "collection": "scarves",
+        "collection": "hats",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
@@ -915,11 +915,11 @@
       },
       "name": "t:names.products_grid",
       "settings": {
-        "collection": "scarves",
+        "collection": "throws",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
-        "columns": 4,
+        "columns": 2,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,

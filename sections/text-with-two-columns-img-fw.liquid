@@ -49,41 +49,80 @@
 </div>
 
 {% stylesheet %}
-  .text-with-two-columns-img-fw__section {
-    border-top: 0.3px solid var(--color-border);
-    border-bottom: 0.3px solid var(--color-border);
-  }
+ .text-with-two-columns-img-fw__section {
+  border-top: 0.3px solid var(--color-border);
+  border-bottom: 0.3px solid var(--color-border);
+}
 
+.text-with-two-columns-img-fw__text {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+}
+
+.text-with-two-columns-img-fw__headline {
+  grid-column: span 4;
+  border-right: 0.3px solid var(--color-border);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.text-with-two-columns-img-fw__body {
+  padding: 48px 64px;
+  grid-column: span 8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 96px;
+  font-size: 16px;
+}
+
+.text-with-two-columns-img-fw__paragraph-1 {
+  margin: 0;
+}
+
+.text-with-two-columns-img-fw__paragraph-2 {
+  margin: 0;
+}
+
+/* ======================================
+   TABLET (≤768px)
+====================================== */
+@media (max-width: 768px) {
   .text-with-two-columns-img-fw__text {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
   .text-with-two-columns-img-fw__headline {
-    grid-column: span 4;
-    border-right: 0.3px solid var(--color-border);
-    height: 100%;
-    display: flex;
-    align-items: center;
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: 0.3px solid var(--color-border);
+    justify-content: center;
+    padding: 32px 0;
   }
 
   .text-with-two-columns-img-fw__body {
-    padding: 48px 64px;
-    grid-column: span 8;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 96px;
-    font-size: 16px;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    column-gap: 0;
+    padding: 40px 48px;
+  }
+}
+
+/* ======================================
+   MOBILE (≤460px)
+====================================== */
+@media (max-width: 460px) {
+  .text-with-two-columns-img-fw__headline {
+    padding: 24px 0;
   }
 
-  .text-with-two-columns-img-fw__paragraph-1 {
-    margin: 0;
+  .text-with-two-columns-img-fw__body {
+    padding: 32px 24px;
+    row-gap: 24px;
   }
-
-  .text-with-two-columns-img-fw__paragraph-2 {
-    margin: 0;
-  }
+}
 {% endstylesheet %}
 
 {% schema %}

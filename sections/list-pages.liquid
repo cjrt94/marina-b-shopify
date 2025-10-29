@@ -49,16 +49,43 @@
 </div>
 
 {% stylesheet %}
+.list-pages__section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.list-pages__heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ======================================
+   TABLET (≤768px)
+====================================== */
+@media (max-width: 768px) {
   .list-pages__section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .list-pages__heading {
+    margin-bottom: 40px;
+  }
+}
+
+/* ======================================
+   MOBILE (≤460px)
+====================================== */
+@media (max-width: 460px) {
+  .list-pages__section {
     gap: 24px;
   }
 
-  .list-pages__heading{
-    text-align: center;
-    margin-bottom: 48px;
+  .list-pages__heading {
+    margin-bottom: 32px;
   }
+}
 {% endstylesheet %}
 
 {% schema %}

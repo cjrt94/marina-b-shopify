@@ -79,7 +79,7 @@
       "name": "Three Colums Text And Img",
       "settings": {
         "heading": "About Us",
-        "paragraph_1": "We are an Alpaca brand born in Lima, and our commitment is to support more Peruvian women by integrating them into our supply chain as talented artisans who carry ancient textile knowledge.\n\nMore than a company, we are a family that seeks the continuous development of each of its members. Each person is a fundamental part of the growth and progress of this company, whose main goal is to preserve cultural heritage and promote the core of society — the family — through work, training, and the empowerment of our valued women, the foundation and pillar of every home.",
+        "paragraph_1": "<p>We are an Alpaca brand born in Lima, and our commitment is to support more Peruvian women by integrating them into our supply chain as talented artisans who carry ancient textile knowledge.\n\nMore than a company, we are a family that seeks the continuous development of each of its members. Each person is a fundamental part of the growth and progress of this company, whose main goal is to preserve cultural heritage and promote the core of society — the family — through work, training, and the empowerment of our valued women, the foundation and pillar of every home.</p>",
         "image_1": "shopify://shop_images/image-1_569f1683-d9cb-47fd-a518-becf1aff3051.png",
         "image_2": "shopify://shop_images/image_9caf5758-1a79-4b5b-a4dc-886721d72f2e.png",
         "color_scheme": "",
@@ -110,7 +110,7 @@
             "image": "shopify://shop_images/1.png",
             "title": "Accessories",
             "overlay_opacity": 40,
-            "link": "shopify://pages/page"
+            "link": "shopify://collections/scarves"
           }
         },
         "image_card_yy4aDA": {
@@ -135,9 +135,9 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/4.png",
-            "title": "Vicuna",
+            "title": "Vicuña",
             "overlay_opacity": 40,
-            "link": "shopify://pages/about-us"
+            "link": "shopify://pages/the-gold-of-the-andes"
           }
         }
       },

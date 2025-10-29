@@ -36,38 +36,83 @@
 </div>
 
 {% stylesheet %}
-  .two-columns-text-and-img__section {
-    border-bottom: 0.3px solid var(--color-border);
-  }
+ .two-columns-text-and-img__section {
+  border-bottom: 0.3px solid var(--color-border);
+}
 
+.two-columns-text-and-img__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.two-columns-text-and-img__images {
+  padding-right: 48px;
+  border-right: 0.3px solid var(--color-border);
+  padding-bottom: 48px;
+  padding-top: 48px;
+  height: 100%;
+}
+
+.two-columns-text-and-img__images img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.two-columns-text-and-img__text {
+  padding-left: 48px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.two-columns-text-and-img__text p {
+  margin: 0;
+}
+
+/* ======================================
+   TABLET (≤768px)
+====================================== */
+@media (max-width: 768px) {
   .two-columns-text-and-img__wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
   .two-columns-text-and-img__images {
-    padding-right: 48px;
-    border-right: 0.3px solid var(--color-border);
-    padding-bottom: 48px;
-    padding-top: 48px;
-    height: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 0.3px solid var(--color-border);
+    padding-bottom: 32px;
+    padding-top: 40px;
+    height: auto;
   }
 
   .two-columns-text-and-img__images img {
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
   }
 
   .two-columns-text-and-img__text {
-    padding-left: 48px;
-    padding-top: 24px;
+    padding-left: 0;
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ======================================
+   MOBILE (≤460px)
+====================================== */
+@media (max-width: 460px) {
+  .two-columns-text-and-img__images {
+    padding-top: 32px;
     padding-bottom: 24px;
   }
 
-  .two-columns-text-and-img__text p {
-    margin: 0;
+  .two-columns-text-and-img__text {
+    padding-top: 24px;
+    padding-bottom: 32px;
   }
+}
+
 {% endstylesheet %}
 
 {% schema %}

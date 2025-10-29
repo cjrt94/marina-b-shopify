@@ -23,23 +23,61 @@
 </div>
 
 {% stylesheet %}
+.general-page-terms__wrap {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.general-page-terms__heading {
+  grid-column: span 3;
+}
+
+.general-page-terms__heading h5 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.general-page-terms__body {
+  grid-column: 4 / span 6;
+}
+
+/* ======================================
+   TABLET (≤768px)
+====================================== */
+@media (max-width: 768px) {
   .general-page-terms__wrap {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 32px;
   }
 
   .general-page-terms__heading {
-    grid-column: span 3;
-  }
-
-  .general-page-terms__heading h5 {
-    font-size: 24px;
-    font-weight: 600;
+    grid-column: 1 / span 6;
+    text-align: center;
   }
 
   .general-page-terms__body {
-    grid-column: 4 / span 6;
+    grid-column: 1 / span 6;
   }
+}
+
+/* ======================================
+   MOBILE (≤460px)
+====================================== */
+@media (max-width: 460px) {
+  .general-page-terms__wrap {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .general-page-terms__heading {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .general-page-terms__body {
+    grid-column: 1 / -1;
+  }
+}
 {% endstylesheet %}
 
 {% schema %}

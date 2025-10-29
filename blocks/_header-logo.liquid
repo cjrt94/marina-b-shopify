@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign block_settings = block.settings
   assign use_inverse_logo = false
@@ -9,6 +7,8 @@
   elsif section.settings.enable_transparent_header_product and template.name == 'product' and section.settings.product_color_scheme == 'inverse'
     assign use_inverse_logo = true
   elsif section.settings.enable_transparent_header_collection and template.name == 'collection' and section.settings.collection_color_scheme == 'inverse'
+    assign use_inverse_logo = true
+  elsif section.settings.enable_transparent_header_contact and page.handle == 'contact' and section.settings.contact_color_scheme == 'inverse'
     assign use_inverse_logo = true
   endif
 

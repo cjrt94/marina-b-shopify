@@ -48,100 +48,99 @@
     {%- endif -%}
 
     <div class="contact-form__form-row">
-      <label
-        class="visually-hidden"
-        for="ContactForm-name"
-      >
-        {{- 'blocks.contact_form.name' | t -}}
-      </label>
-      <input
-        type="text"
-        id="ContactForm-name"
-        class="contact-form__input"
-        autocomplete="name"
-        name="contact[name]"
-        value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-        placeholder="{{ 'blocks.contact_form.name' | t }}"
-      >
+      <div>
+        <label for="ContactForm-name"> First Name* </label>
+        <input
+          type="text"
+          id="ContactForm-name"
+          class="contact-form__input"
+          autocomplete="name"
+          name="contact[name]"
+          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+        >
+      </div>
 
-      <label
-        class="visually-hidden"
-        for="ContactForm-email"
-      >
-        {{- 'blocks.contact_form.email' | t -}}
-        <span aria-hidden="true">*</span></label
-      >
-      <input
-        type="email"
-        id="ContactForm-email"
-        class="contact-form__input"
-        autocomplete="email"
-        name="contact[email]"
-        spellcheck="false"
-        autocapitalize="off"
-        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-        aria-required="true"
-        {% if form.errors contains 'email' %}
-          aria-invalid="true"
-          aria-describedby="ContactForm-email-error"
-        {% endif %}
-        placeholder="{{ 'blocks.contact_form.email' | t }}"
-      >
+      <div>
+        <label for="ContactForm-lastname"> Last Name* </label>
+        <input
+          type="text"
+          id="ContactForm-lastname"
+          class="contact-form__input"
+          autocomplete="lastname"
+          name="contact[lastname]"
+          value="{% if form.lastname %}{{ form.lastname }}{% elsif customer %}{{ customer.lastname }}{% endif %}"
+        >
+      </div>
     </div>
 
-    <label
-      class="visually-hidden"
-      for="ContactForm-phone"
-    >
-      {{- 'blocks.contact_form.phone' | t -}}
-    </label>
-    <input
-      type="tel"
-      id="ContactForm-phone"
-      class="contact-form__input"
-      autocomplete="tel"
-      name="contact[phone]"
-      pattern="[0-9\-]*"
-      value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-      placeholder="{{ 'blocks.contact_form.phone' | t }}"
-    >
+    <div class="contact-form__form-row">
+      <div class="contact-form__form-row__two ">
+        <label
+          for="ContactForm-email"
+        >
+          {{- 'blocks.contact_form.email' | t -}}
+          <span aria-hidden="true">*</span></label
+        >
+        <input
+          type="email"
+          id="ContactForm-email"
+          class="contact-form__input"
+          autocomplete="email"
+          name="contact[email]"
+          spellcheck="false"
+          autocapitalize="off"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="ContactForm-email-error"
+          {% endif %}
+        >
+      </div>
+    </div>
 
-    <label
-      class="visually-hidden"
-      for="ContactForm-body"
-    >
-      {{- 'blocks.contact_form.comment' | t -}}
-    </label>
-    <textarea
-      rows="10"
-      id="ContactForm-body"
-      class="contact-form__input contact-form__input--textarea"
-      name="contact[body]"
-      placeholder="{{ 'blocks.contact_form.comment' | t }}"
-    >
+    <div class="contact-form__form-row">
+      <div class="contact-form__form-row__two">
+        <label
+          for="ContactForm-body"
+        >
+          Your Message*
+        </label>
+        <textarea
+          rows="10"
+          id="ContactForm-body"
+          class="contact-form__input contact-form__input--textarea"
+          name="contact[body]"
+        >
       {{- form.body -}}
     </textarea>
+      </div>
+    </div>
 
     {{ submit_button }}
   {%- endform -%}
 </div>
 
 {% stylesheet %}
-  .contact-form__form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-md);
-  }
-
   .contact-form__form-row {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--gap-md);
+    margin-bottom: 24px;
 
     @media screen and (min-width: 750px) {
       flex-direction: row;
       align-items: center;
     }
+  }
+
+  .contact-form__form-row label {
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .contact-form__form-row__two {
+    grid-column: span 2;
   }
 
   .contact-form__input {
@@ -150,14 +149,14 @@
     text-overflow: ellipsis;
     color: var(--color-input-text);
     background-color: var(--color-input-background);
-    padding: var(--padding-lg) var(--padding-xl);
+    padding: var(--padding-sm) var(--padding-xl);
     border-radius: var(--style-border-radius-inputs);
     border: var(--style-border-width-inputs) solid var(--color-input-border);
     -webkit-font-smoothing: antialiased;
   }
 
   .contact-form__input--textarea {
-    resize: vertical;
+    resize: none;
     min-height: var(--input-textarea-min-height);
   }
 
@@ -166,5 +165,18 @@
     display: flex;
     align-items: center;
     gap: var(--gap-xs);
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  .contact-form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 48px;
+    border-right: 0.3px solid var(--color-border);
   }
 {% endstylesheet %}

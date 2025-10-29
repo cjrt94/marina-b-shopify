@@ -40,11 +40,11 @@
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
-            "navigation_bar": true,
+            "navigation_bar": false,
             "color_scheme_navigation_bar": "scheme-5",
-            "drawer_accordion": false,
-            "drawer_accordion_expand_first": false,
-            "drawer_dividers": false
+            "drawer_accordion": true,
+            "drawer_accordion_expand_first": true,
+            "drawer_dividers": true
           },
           "blocks": {}
         }
@@ -85,8 +85,12 @@
         "our_fibers_color_scheme": "default",
         "enable_transparent_header_the_gold_of_andes": true,
         "the_gold_of_andes_color_scheme": "default",
-        "enable_transparent_terms": true,
-        "terms_color_scheme": "default"
+        "enable_transparent_header_terms": true,
+        "terms_color_scheme": "default",
+        "enable_transparent_header_contact": true,
+        "contact_color_scheme": "inverse",
+        "enable_transparent_header_gallery": true,
+        "gallery_color_scheme": "default"
       }
     }
   },
