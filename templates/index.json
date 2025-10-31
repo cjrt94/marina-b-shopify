@@ -119,7 +119,7 @@
             "image": "shopify://shop_images/2.png",
             "title": "Home",
             "overlay_opacity": 40,
-            "link": "shopify://pages/page"
+            "link": "shopify://collections/throws"
           }
         },
         "image_card_wF6fcz": {
@@ -128,7 +128,7 @@
             "image": "shopify://shop_images/3.png",
             "title": "About",
             "overlay_opacity": 40,
-            "link": "shopify://pages/page"
+            "link": "shopify://pages/about-us"
           }
         },
         "image_card_m4Txxa": {

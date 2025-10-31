@@ -90,7 +90,11 @@
         "enable_transparent_header_contact": true,
         "contact_color_scheme": "inverse",
         "enable_transparent_header_gallery": true,
-        "gallery_color_scheme": "default"
+        "gallery_color_scheme": "default",
+        "enable_transparent_header_special": true,
+        "special_color_scheme": "inverse",
+        "enable_transparent_header_faq": true,
+        "faq_color_scheme": "default"
       }
     }
   },

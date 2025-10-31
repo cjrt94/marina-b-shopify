@@ -39,6 +39,9 @@
   elsif section.settings.enable_transparent_header_terms and page.handle == 'returns'
     assign transparent = 'always'
     assign transparent_color_scheme = section.settings.terms_color_scheme
+  elsif section.settings.enable_transparent_header_faq and page.handle == 'faq'
+    assign transparent = 'always'
+    assign transparent_color_scheme = section.settings.faq_color_scheme
   elsif section.settings.enable_transparent_header_terms and page.handle == 'shipping'
     assign transparent = 'always'
     assign transparent_color_scheme = section.settings.terms_color_scheme
@@ -48,6 +51,9 @@
   elsif section.settings.enable_transparent_header_gallery and page.handle == 'gallery'
     assign transparent = 'always'
     assign transparent_color_scheme = section.settings.gallery_color_scheme
+  elsif section.settings.enable_transparent_header_special and page.handle == 'special-orders'
+    assign transparent = 'always'
+    assign transparent_color_scheme = section.settings.special_color_scheme
   endif
 
   if section.settings.enable_sticky_header == 'always'
@@ -1242,7 +1248,7 @@
       "visible_if": "{{ section.settings.enable_transparent_header_contact }}"
     },
 
-     {
+    {
       "type": "header",
       "content": "Collections Page"
     },
@@ -1268,6 +1274,62 @@
       ],
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_gallery }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Special Orders"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_special",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "special_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_header_special }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Faq"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_faq",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "faq_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_header_faq }}"
     }
   ],
   "presets": []

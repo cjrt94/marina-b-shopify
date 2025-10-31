@@ -10,6 +10,10 @@
     assign use_inverse_logo = true
   elsif section.settings.enable_transparent_header_contact and page.handle == 'contact' and section.settings.contact_color_scheme == 'inverse'
     assign use_inverse_logo = true
+  elsif section.settings.enable_transparent_header_special and page.handle == 'special-orders' and section.settings.special_color_scheme == 'inverse'
+    assign use_inverse_logo = true
+  elsif section.settings.enable_transparent_header_faq and page.handle == 'faq' and section.settings.faq_color_scheme == 'inverse'
+    assign use_inverse_logo = true
   endif
 
   if use_inverse_logo
