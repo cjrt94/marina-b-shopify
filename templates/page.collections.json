@@ -15,11 +15,11 @@
         "text_GtTGMq": {
           "type": "text",
           "settings": {
-            "text": "<p>Explore our Vicuña Collection</p>",
+            "text": "<h6>Explore our Vicuña Collection</h6>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
-            "type_preset": "h1",
+            "type_preset": "h2",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
