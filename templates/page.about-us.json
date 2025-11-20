@@ -103,7 +103,7 @@
       "name": "Two Columns Text And Img Left",
       "settings": {
         "heading": "Our Story",
-        "paragraph_1": "<p>Maria Buraschi is the visionary force behind our brand — a woman deeply committed to timeless elegance, cultural heritage, and responsible fashion. With a refined eye for design and a heart rooted in the Andean land, Maria has dedicated her life to elevating natural fibers like alpaca and vicuña to the level of true luxury. Her leadership reflects a unique balance between sophistication and social purpose. <br/><br/>Under her guidance, the brand not only creates garments of exceptional quality, but also builds strong relationships with local artisans and communities. Maria believes that true beauty lies in craftsmanship, sustainability, and human connection — values that she has seamlessly woven into every aspect of the brand.<br/>Thanks to her vision, our collections are more than fashion — they are a tribute to the land, the hands that craft each piece, and the stories that live within the fibers.</p>",
+        "paragraph_1": "<p>Founded by Marina Buraschi, this brand is a tribute to Peru and to its one of a kind nature and heritage.</p><p>With a refined eye for design and a heart rooted in the Peruvian land, Marina is committed to elevating natural fibers like Alpaca and Vicuña to the level of true luxury. Her leadership reflects a unique balance between sophistication and social purpose.<br/>Under her guidance, the brand not only creates garments of exceptional quality, but also builds strong relationships with local artisans and communities. Marina believes that true beauty lies in craftsmanship, sustainability, and human connection — values that she has seamlessly woven into every aspect of the brand.<br/>Thanks to her vision, our collections are more than fashion — they are an homage to the land, the hands that craft each piece, and the stories that live within the fibers.</p>",
         "image_1": "shopify://shop_images/Our_Story.png",
         "color_scheme": "",
         "padding-block-start": 0,
@@ -129,12 +129,12 @@
       "name": "Two Columns Text And Full With Image",
       "settings": {
         "heading": "Commitment to Excellence",
-        "paragraph_1": "Founded in 2004, Marina Buraschi stands as the standard-bearer of the pioneer's legacy and its mission to showcase to Peru and the world garments of unparalleled quality.",
-        "paragraph_2": "Each piece in our distinguished collections is crafted with the finest Andean fibers, such as Alpaca and Vicuña, the result of a meticulous production process.",
+        "paragraph_1": "Our commitment goes beyond design. We\nvalue sustainability, authenticity, and time-honored detail. \nWe offer pieces that connect\ndeeply to history, to the land, and to the\nquiet rituals that make each day special.",
+        "paragraph_2": "Each piece in our distinguished collections is crafted with the finest Peruvian fibers. In our Shop you will find our Alpaca collection and a lookbook of our Vicuña collection.",
         "image_1": "shopify://shop_images/image_acec85d8-4348-4bb4-b995-75b87e9cb9c8.png",
         "autoplay": false,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 32,
         "padding-block-end": 0
       }
     }

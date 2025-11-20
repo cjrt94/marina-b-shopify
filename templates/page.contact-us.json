@@ -61,7 +61,7 @@
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 0,
         "padding-block-end": 0
       }
     },
@@ -103,7 +103,7 @@
           "type": "image",
           "name": "t:names.image",
           "settings": {
-            "image": "shopify://shop_images/hero_2.png",
+            "image": "shopify://shop_images/Copia_de_Copia_de_Copia_de_ALPACAS-36.jpg",
             "link": "",
             "image_ratio": "square",
             "width": "fill",

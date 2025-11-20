@@ -69,5 +69,27 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const preloader = document.getElementById("preloader");
+
+      // Mostrarlo un poco mientras carga la primera vez
+      window.addEventListener("load", function() {
+       //  preloader.classList.add("hidden");
+      });
+
+      // Para enlaces internos de Shopify (navegación AJAX / turbo links)
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if(href && !href.startsWith('#') && !href.startsWith('javascript')) {
+            preloader.classList.remove('hidden');
+          }
+        });
+      });
+    });
+    </script>
+
   </body>
 </html>

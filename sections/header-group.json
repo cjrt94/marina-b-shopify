@@ -11,6 +11,36 @@
   "type": "header",
   "name": "Header",
   "sections": {
+    "header_announcements_7Pkpnd": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_3AjtdV": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Complimentary Shipping on orders above 300 CHF",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_3AjtdV"
+      ],
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 7,
+        "section_width": "page-width",
+        "color_scheme": "scheme-5",
+        "divider_width": 0,
+        "padding-block-start": 15,
+        "padding-block-end": 15
+      }
+    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -99,6 +129,7 @@
     }
   },
   "order": [
+    "header_announcements_7Pkpnd",
     "header_section"
   ]
 }

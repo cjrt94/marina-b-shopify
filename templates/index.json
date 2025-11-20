@@ -31,7 +31,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
         "toggle_overlay": true,
-        "overlay_color": "#12121268",
+        "overlay_color": "#12121269",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
@@ -79,7 +79,7 @@
       "name": "Three Colums Text And Img",
       "settings": {
         "heading": "About Us",
-        "paragraph_1": "<p>We are an Alpaca brand born in Lima, and our commitment is to support more Peruvian women by integrating them into our supply chain as talented artisans who carry ancient textile knowledge.\n\nMore than a company, we are a family that seeks the continuous development of each of its members. Each person is a fundamental part of the growth and progress of this company, whose main goal is to preserve cultural heritage and promote the core of society — the family — through work, training, and the empowerment of our valued women, the foundation and pillar of every home.</p>",
+        "paragraph_1": "<p>Our mission is to deliver timeless elegance and effortless comfort to your everyday. We believe in the power of details and simplicity.</p>",
         "image_1": "shopify://shop_images/image-1_569f1683-d9cb-47fd-a518-becf1aff3051.png",
         "image_2": "shopify://shop_images/image_9caf5758-1a79-4b5b-a4dc-886721d72f2e.png",
         "color_scheme": "",
@@ -92,8 +92,8 @@
       "name": "Two Columns Text And Full With Image",
       "settings": {
         "heading": "History",
-        "paragraph_1": "Founded in 2004, Marina Buraschi stands as the standard-bearer of the pioneer's legacy and its mission to showcase to Peru and the world garments of unparalleled quality.",
-        "paragraph_2": "Each piece in our distinguished collections is crafted with the finest Andean fibers, such as Alpaca and Vicuña, the result of a meticulous production process.",
+        "paragraph_1": "Alpaca and Vicuña offer an unmatched softness, but the soul of the brand is rooted in heritage and intention.",
+        "paragraph_2": "A softness you can feel, and a strength you carry with you.",
         "video_file": "shopify://files/videos/slow-motion-group-of-beautiful-llamas-in-the-highl-2025-08-28-13-06-00-utc.mov",
         "autoplay": true,
         "color_scheme": "",

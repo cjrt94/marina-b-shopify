@@ -1,0 +1,533 @@
+{% doc %}
+  @prompt
+    I need a modal that allows the user to sign up and either receive a discount or not. In other words, I need it to be configurable to show either a discount or just a thank-you screen.
+    
+    I need this section to be integrated with the color schemes and to allow editing of the heading, description, input text or placeholder for the email field, and the submit button label. Additionally, it should include an image on the left side.
+    
+    Finally, it must be fully responsive on mobile devices., I need it to be a floating modal!, It should have a configurable background and a z-index of 101.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-signup-modal-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+    padding: 20px;
+  }
+
+  .ai-signup-modal-{{ ai_gen_id }}.active {
+    display: flex;
+  }
+
+  .ai-signup-modal__container-{{ ai_gen_id }} {
+    background-color: rgb(var(--color-background));
+    border-radius: 8px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .ai-signup-modal__close-{{ ai_gen_id }} {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+    color: rgb(var(--color-foreground));
+    opacity: 0.7;
+  }
+
+  .ai-signup-modal__close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  .ai-signup-modal__image-{{ ai_gen_id }} {
+    flex: 0 0 45%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-signup-modal__image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-signup-modal__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(var(--color-background));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-signup-modal__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-signup-modal__content-{{ ai_gen_id }} {
+    flex: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+  }
+
+  .ai-signup-modal__heading-{{ ai_gen_id }} {
+    color: rgb(var(--color-foreground-heading));
+    margin: 0 0 16px;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .ai-signup-modal__description-{{ ai_gen_id }} {
+    color: rgb(var(--color-foreground));
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .ai-signup-modal__form-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-signup-modal__input-{{ ai_gen_id }} {
+    padding: 14px 16px;
+    border: 1px solid rgb(var(--color-input-border-color));
+    border-radius: {{ settings.inputs_border_radius }}px;
+    background-color: rgb(var(--color-input-background));
+    color: rgb(var(--color-input-text-color));
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .ai-signup-modal__input-{{ ai_gen_id }}:focus {
+    outline: 2px solid rgb(var(--color-primary));
+    outline-offset: 2px;
+  }
+
+  .ai-signup-modal__button-{{ ai_gen_id }} {
+    padding: 14px 32px;
+    background-color: rgb(var(--color-primary-button-background));
+    color: rgb(var(--color-primary-button-text));
+    border: {{ settings.primary_button_border_width }}px solid rgb(var(--color-primary-button-border));
+    border-radius: {{ settings.button_border_radius_primary }}px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .ai-signup-modal__button-{{ ai_gen_id }}:hover {
+    background-color: rgb(var(--color-primary-button-hover-background));
+    color: rgb(var(--color-primary-button-hover-text));
+    border-color: rgb(var(--color-primary-button-hover-border));
+  }
+
+  .ai-signup-modal__success-{{ ai_gen_id }},
+  .ai-signup-modal__error-{{ ai_gen_id }} {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .ai-signup-modal__success-{{ ai_gen_id }} {
+    color: #008060;
+  }
+
+  .ai-signup-modal__error-{{ ai_gen_id }} {
+    color: #D82C0D;
+  }
+
+  .ai-signup-modal__discount-code-{{ ai_gen_id }} {
+    background-color: rgba(var(--color-primary), 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .ai-signup-modal__discount-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: rgb(var(--color-foreground));
+    margin-bottom: 8px;
+  }
+
+  .ai-signup-modal__discount-value-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(var(--color-primary));
+    font-family: monospace;
+    letter-spacing: 2px;
+  }
+
+  .ai-signup-modal__thank-you-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-signup-modal__thank-you-heading-{{ ai_gen_id }} {
+    color: rgb(var(--color-foreground-heading));
+    margin: 0 0 16px;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .ai-signup-modal__thank-you-message-{{ ai_gen_id }} {
+    color: rgb(var(--color-foreground));
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-signup-modal__container-{{ ai_gen_id }} {
+      flex-direction: column;
+      max-height: 95vh;
+    }
+
+    .ai-signup-modal__image-{{ ai_gen_id }} {
+      flex: 0 0 200px;
+      min-height: 200px;
+    }
+
+    .ai-signup-modal__content-{{ ai_gen_id }} {
+      padding: 32px 24px;
+    }
+
+    .ai-signup-modal__heading-{{ ai_gen_id }} {
+      font-size: 24px;
+    }
+
+    .ai-signup-modal__description-{{ ai_gen_id }} {
+      font-size: 14px;
+    }
+
+    .ai-signup-modal__close-{{ ai_gen_id }} {
+      top: 12px;
+      right: 12px;
+    }
+  }
+{% endstyle %}
+
+<signup-modal-{{ ai_gen_id }} class="color-{{ block.settings.color_scheme }}" {{ block.shopify_attributes }}>
+  <div class="ai-signup-modal-{{ ai_gen_id }}" role="dialog" aria-modal="true" aria-labelledby="modal-heading-{{ ai_gen_id }}">
+    <div class="ai-signup-modal__container-{{ ai_gen_id }}">
+      <button class="ai-signup-modal__close-{{ ai_gen_id }}" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="ai-signup-modal__image-{{ ai_gen_id }}">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 800 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+          >
+        {% else %}
+          <div class="ai-signup-modal__image-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-signup-modal__content-{{ ai_gen_id }}">
+        <div class="ai-signup-modal__form-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.heading != blank %}
+            <h2 id="modal-heading-{{ ai_gen_id }}" class="ai-signup-modal__heading-{{ ai_gen_id }}">
+              {{ block.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if block.settings.description != blank %}
+            <div class="ai-signup-modal__description-{{ ai_gen_id }}">
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+
+          {%- form 'contact' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="ai-signup-modal__form-{{ ai_gen_id }}">
+              <input
+                type="email"
+                name="contact[email]"
+                class="ai-signup-modal__input-{{ ai_gen_id }}"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="ai-signup-modal-error-{{ ai_gen_id }}"
+                {% endif %}
+                {% if form.posted_successfully? %}
+                  aria-describedby="ai-signup-modal-success-{{ ai_gen_id }}"
+                {% endif %}
+                placeholder="{{ block.settings.email_placeholder }}"
+                required
+              >
+              <button type="submit" class="ai-signup-modal__button-{{ ai_gen_id }}">
+                {{ block.settings.submit_button_label }}
+              </button>
+
+              {%- if form.errors -%}
+                <div id="ai-signup-modal-error-{{ ai_gen_id }}" class="ai-signup-modal__error-{{ ai_gen_id }}">
+                  <span>{{ form.errors.messages.email }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if form.posted_successfully? -%}
+                <div id="ai-signup-modal-success-{{ ai_gen_id }}" class="ai-signup-modal__success-{{ ai_gen_id }}">
+                  <span>{{ block.settings.success_message }}</span>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endform -%}
+        </div>
+
+        <div class="ai-signup-modal__thank-you-{{ ai_gen_id }}" style="display: none;">
+          <h2 class="ai-signup-modal__thank-you-heading-{{ ai_gen_id }}">
+            {{ block.settings.thank_you_heading }}
+          </h2>
+          <div class="ai-signup-modal__thank-you-message-{{ ai_gen_id }}">
+            {{ block.settings.thank_you_message }}
+          </div>
+
+          {% if block.settings.show_discount %}
+            <div class="ai-signup-modal__discount-code-{{ ai_gen_id }}">
+              <div class="ai-signup-modal__discount-label-{{ ai_gen_id }}">
+                {{ block.settings.discount_label }}
+              </div>
+              <div class="ai-signup-modal__discount-value-{{ ai_gen_id }}">
+                {{ block.settings.discount_code }}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</signup-modal-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SignupModal{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.hasShown = false;
+      }
+
+      connectedCallback() {
+        this.modal = this.querySelector('.ai-signup-modal-{{ ai_gen_id }}');
+        this.closeButton = this.querySelector('.ai-signup-modal__close-{{ ai_gen_id }}');
+        this.form = this.querySelector('form');
+        this.formWrapper = this.querySelector('.ai-signup-modal__form-wrapper-{{ ai_gen_id }}');
+        this.thankYou = this.querySelector('.ai-signup-modal__thank-you-{{ ai_gen_id }}');
+
+        this.setupEventListeners();
+        this.scheduleModal();
+      }
+
+      setupEventListeners() {
+        this.closeButton.addEventListener('click', () => this.closeModal());
+        
+        this.modal.addEventListener('click', (e) => {
+          if (e.target === this.modal) {
+            this.closeModal();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+            this.closeModal();
+          }
+        });
+
+        this.form.addEventListener('submit', (e) => {
+          setTimeout(() => {
+            if (this.form.querySelector('.ai-signup-modal__success-{{ ai_gen_id }}')) {
+              this.showThankYou();
+            }
+          }, 100);
+        });
+      }
+
+      scheduleModal() {
+        const delay = parseInt('{{ block.settings.delay_seconds }}') * 1000;
+        
+        if (sessionStorage.getItem('signup-modal-{{ ai_gen_id }}-closed')) {
+          return;
+        }
+
+        setTimeout(() => {
+          this.openModal();
+        }, delay);
+      }
+
+      openModal() {
+        if (this.hasShown) return;
+        this.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        this.hasShown = true;
+      }
+
+      closeModal() {
+        this.modal.classList.remove('active');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('signup-modal-{{ ai_gen_id }}-closed', 'true');
+        this.formWrapper.style.display = 'block';
+        this.thankYou.style.display = 'none';
+      }
+
+      showThankYou() {
+        this.formWrapper.style.display = 'none';
+        this.thankYou.style.display = 'block';
+      }
+    }
+
+    customElements.define('signup-modal-{{ ai_gen_id }}', SignupModal{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Email signup modal",
+  "tag": null,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Display settings"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay background",
+      "default": "rgba(0, 0, 0, 0.5)"
+    },
+    {
+      "type": "range",
+      "id": "delay_seconds",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "label": "Delay before showing",
+      "default": 3,
+      "info": "Time in seconds before the modal appears"
+    },
+    {
+      "type": "header",
+      "content": "Modal content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join our newsletter"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Subscribe to get special offers, free giveaways, and exclusive deals."
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "submit_button_label",
+      "label": "Submit button label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks for subscribing!"
+    },
+    {
+      "type": "header",
+      "content": "Thank you screen"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_heading",
+      "label": "Heading",
+      "default": "Thank you!"
+    },
+    {
+      "type": "textarea",
+      "id": "thank_you_message",
+      "label": "Message",
+      "default": "You've successfully subscribed to our newsletter."
+    },
+    {
+      "type": "header",
+      "content": "Discount code"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount",
+      "label": "Show discount code",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "discount_label",
+      "label": "Discount label",
+      "default": "Use this code for 10% off your first order:"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code",
+      "default": "WELCOME10"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Email signup modal"
+    }
+  ]
+}
+{% endschema %}
