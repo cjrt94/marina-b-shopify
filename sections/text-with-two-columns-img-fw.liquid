@@ -34,11 +34,14 @@
         >
       {% elsif section.settings.video_file != blank %}
         <div class="video-wrapper">
-          <video
-            src="{{ section.settings.video_file.sources[0].url}}"
+         <video
+            src="{{ section.settings.video_file.sources[0].url }}"
             muted
             {% if section.settings.autoplay %}
-              autoplay muted loop
+              autoplay
+              loop
+              playsinline
+              webkit-playsinline
             {% endif %}
             style="width:100%; height:auto;"
           ></video>

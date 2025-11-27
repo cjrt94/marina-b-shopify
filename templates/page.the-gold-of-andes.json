@@ -81,7 +81,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "video",
-        "video_1": "shopify://files/videos/Vicuna_Video.mp4",
+        "video_1": "shopify://files/videos/Vicuna Chaccu.mov",
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -112,7 +112,7 @@
       "name": "Two Columns Text And Img Left",
       "settings": {
         "heading": "Chaccu",
-        "paragraph_1": "<p>Each strand of vicuña fiber that makes up our pieces originates from an ancestral ritual celebrated high in the Peruvian Andes: the Chaccu. This millennia-old ceremony—passed down from pre-Incan cultures and preserved through time—is not merely a shearing act, but a gesture of reverence toward nature.</p><p><br/>Once a year, highland communities gather over 4,000 meters above sea level, where the air is pure and the landscape sacred. There, through a delicate human corral, wild vicuñas are guided without violence, honoring their natural cycles and freedom. Only adult animals are sheared, and the fiber collected is considered a gift: soft, rare, and of unmatched quality.</p><p><br/>After the shearing—performed manually and without harm—the vicuñas are released back into the heart of their natural habitat. This process can only be repeated every two or three years, and only under ideal conditions.</p>",
+        "paragraph_1": "<p>Each strand of Vicuña fiber that makes up our pieces originates from an ancestral ritual celebrated high in the Peruvian Andes: the Chaccu. This millennia-old ceremony—passed down from pre-Incan cultures and preserved through time—is not merely a shearing act, but a gesture of reverence toward nature.</p><p><br/>Once a year, highland communities gather over 4,000 meters above sea level, where the air is pure and the landscape sacred. There, through a delicate human corral, wild vicuñas are guided without violence, honoring their natural cycles and freedom. Only adult animals are sheared, and the fiber collected is considered a gift: soft, rare, and of unmatched quality.</p><p><br/>After the shearing—performed manually and without harm—the Vicuñas are released back into the heart of their natural habitat. This process can only be repeated every two or three years, and only under ideal conditions.</p>",
         "image_1": "shopify://shop_images/Hero_cd5e8a06-8f07-4460-9e3d-d2d685b8aefc.png",
         "color_scheme": "",
         "padding-block-start": 0,
@@ -124,7 +124,7 @@
       "name": "Three Colums Text And Img",
       "settings": {
         "heading": "Unique Value",
-        "paragraph_1": "<p><strong>Natural scarcity </strong></p><p>A single vicuña produces only a few grams of fiber every several years.<br/><br/><strong>Artisanal process </strong></p><p>From the communal ritual to the manual shearing, every step is guided by respect and precision.<br/><br/><strong>Challenging access</strong> </p><p>The Andean environment presents both logistical and human challenges that only deeply committed local communities can overcome.<br/><br/><strong>Unrivaled quality</strong></p><p>Measuring just 12 microns in diameter, vicuña fiber is the finest and most exclusive in the world. Its texture—ethereal, warm, and feather-light—is unlike any other.</p>",
+        "paragraph_1": "<p><strong>Natural scarcity </strong></p><p>A single Vicuña produces only a few grams of fiber every several years.<br/><br/><strong>Artisanal process </strong></p><p>From the communal ritual to the manual shearing, every step is guided by respect and precision.<br/><br/><strong>Challenging access</strong> </p><p>The Andean environment presents both logistical and human challenges that only deeply committed local communities can overcome.<br/><br/><strong>Unrivaled quality</strong></p><p>Measuring just 12 microns in diameter, Vicuña fiber is the finest and most exclusive in the world. Its texture—ethereal, warm, and feather-light—is unlike any other.</p>",
         "image_3": "shopify://shop_images/Isotype.png",
         "image_1": "shopify://shop_images/image_45054ca8-6be6-429c-b63c-d32a7790149f.png",
         "image_2": "shopify://shop_images/image-1_1f402a0d-f9ca-4006-87bf-331065334763.png",
@@ -137,8 +137,8 @@
       "type": "text-with-two-columns-img-fw",
       "name": "Two Columns Text And Full With Image",
       "settings": {
-        "heading": "A Luxury ThatRespects Life",
-        "paragraph_1": "Owning a garment made with vicuña fiber is not just about wearing elegance — it's about honoring a living tradition",
+        "heading": "A Luxury that respects Life",
+        "paragraph_1": "Owning a garment made with Vicuña fiber is not just about wearing elegance — it's about honoring a living tradition,",
         "paragraph_2": "supporting the livelihoods of ancestral communities, and celebrating the harmony between humans and nature.",
         "image_1": "shopify://shop_images/hero_2.png",
         "autoplay": false,

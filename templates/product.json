@@ -22,7 +22,7 @@
             "large_first_image": true,
             "icons_style": "none",
             "slideshow_controls_style": "counter",
-            "slideshow_mobile_controls_style": "hint",
+            "slideshow_mobile_controls_style": "counter",
             "thumbnail_position": "right",
             "thumbnail_width": 44,
             "aspect_ratio": "1/1.25",
@@ -154,11 +154,26 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "spacer_HzrjYH": {
+                  "type": "spacer",
+                  "name": "t:names.spacer",
+                  "settings": {
+                    "size": "pixel",
+                    "percent_size": 100,
+                    "pixel_size": 48,
+                    "custom_mobile_size": false,
+                    "size_mobile": "percent",
+                    "percent_size_mobile": 100,
+                    "pixel_size_mobile": 120
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
                 "text_84bABU",
-                "price_tVjtKg"
+                "price_tVjtKg",
+                "spacer_HzrjYH"
               ]
             },
             "spacer_fyCpWF": {
@@ -363,7 +378,7 @@
                     "text_dqzGzJ": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",

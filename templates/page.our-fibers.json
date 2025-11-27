@@ -87,36 +87,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-            "text_hHF7b6": {
-              "type": "text",
-              "settings": {
-                "text": "<p>The alpaca fiber used by Anntarah comes from breeders in the highlands of Peru, serving as the sole economic livelihood for 120,000 families. This way of life, rooted in ancient heritage passed down through generations, allows us to directly provide income and employment to 250 artisans from the region.</p>",
-                "width": "fit-content",
-                "max_width": "none",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 32,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_hHF7b6"
-          ]
+          "blocks": {}
         }
       },
       "block_order": [
@@ -172,7 +143,7 @@
       "settings": {
         "heading": "Baby Alpaca",
         "paragraph_1": "<p>Baby alpaca is the crown jewel of alpaca fibers — exceptionally soft, delicately light, and naturally lustrous. Collected from the finest first shearings, it offers an unparalleled sensation against the skin, making it ideal for garments that blend sophistication with supreme comfort. Its warmth, breathability, and hypoallergenic qualities position it among the most precious natural fibers in the world.<br/><br/>Harvested sustainably in the high Andes, baby alpaca is a testament to expert craftsmanship and deep cultural heritage. With no need for chemical processing and over 20 natural shades available, it reflects a luxury that is both pure and conscious — perfect for those seeking timeless elegance with an ethical soul.</p>",
-        "image_1": "shopify://shop_images/image-1_cbaf66fc-f428-4d85-81b5-f0944f6aa5a4.png",
+        "image_1": "shopify://shop_images/image_cda3f0be-20b4-4adb-83cc-454f59cb1e3a.png",
         "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
         "paragraph_2": "<p>High performance in extreme weather conditions<br/>Incredibly soft to the touch<br/>Wide range of natural colors<br/>22 microns</p>",
         "color_scheme": "",
@@ -200,9 +171,9 @@
       "settings": {
         "heading": "Royal Alpaca",
         "paragraph_1": "<p>Royal alpaca represents the elite tier of alpaca fibers — even finer and more exquisite than baby alpaca. With a diameter of less than 19 microns, it offers an ultra-soft touch that rivals cashmere, yet with greater durability and natural thermal performance. Its silky feel, gentle warmth, and elegant drape make it a preferred choice for high-end garments that demand refined comfort.<br/><br/>Sourced from a select portion of the alpaca population in the Peruvian Andes, Royal alpaca is rare, ethically obtained, and entirely free of harsh treatments. Each piece crafted with this fiber embodies sophistication, tradition, and conscious luxury — a true indulgence for those who seek the finest nature has to offer.</p>",
-        "image_1": "shopify://shop_images/image-3.png",
+        "image_1": "shopify://shop_images/image-1_cbaf66fc-f428-4d85-81b5-f0944f6aa5a4.png",
         "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
-        "paragraph_2": "<p>Subtle luster<br/>Silky appearance<br/>Beautiful uniqueness<br/>Incredibly soft to the touch<br/>19 Microns</p>",
+        "paragraph_2": "<p>Subtle luster<br/>Silky appearance<br/>Beautiful uniqueness<br/>Incredibly soft to the touch<br/>19 microns</p>",
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
@@ -216,7 +187,7 @@
         "paragraph_1": "<p>Renowned as the finest and rarest animal fiber in the world, vicuña wool embodies pure luxury. Soft, lightweight, and naturally warm, it has been treasured since Inca times as a symbol of royalty and exclusivity. Its unmatched texture and subtle sheen make it one of the most desirable materials in high-end fashion.</p><p>Ethically gathered through the ancient Andean ritual called \"Chaccu\", vicuña fiber is harvested without harming the animal, preserving its freedom and well-being. Hand-selected and delicately processed, each garment reflects a deep respect for tradition, nature, and craftsmanship — offering a timeless experience of elegance and comfort.</p>",
         "image_1": "shopify://shop_images/vicuna_cce51d49-98a3-401a-9c24-ef8a4e907f8a.png",
         "image_2": "shopify://shop_images/fiber_3d34cb65-32c5-473e-bc6b-3d51645ac605.png",
-        "paragraph_2": "<p>Naturally hypoallergenic Celebrated as a National Symbol of Peru Known as the “Gold of the Andes,”<br/>Lightweight and thermo-regulatory<br/>11.6-12.8 microns</p>",
+        "paragraph_2": "<p>Naturally hypoallergenic<br/>Celebrated as a National Symbol of Peru<br/>Known as the \"Gold of the Andes\"<br/>Lightweight and thermo-regulatory<br/>11.6-12.8 microns</p>",
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 40

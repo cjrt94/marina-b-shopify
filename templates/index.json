@@ -110,7 +110,7 @@
             "image": "shopify://shop_images/1.png",
             "title": "Accessories",
             "overlay_opacity": 40,
-            "link": "shopify://collections/scarves"
+            "link": "https://marinaburaschi.com/collections"
           }
         },
         "image_card_yy4aDA": {
@@ -125,7 +125,7 @@
         "image_card_wF6fcz": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/3.png",
+            "image": "shopify://shop_images/Copia_de_Copia_de_Copia_de_ALPACAS-36_58cfd64a-0ffa-4e12-b427-be1147442a8c.jpg",
             "title": "About",
             "overlay_opacity": 40,
             "link": "shopify://pages/about-us"

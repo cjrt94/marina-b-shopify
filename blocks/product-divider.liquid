@@ -1,17 +1,22 @@
 <div>
-  <div class="product-divider__block">
-    <div class="product-divider__image">
-      <img
-        src="{{ block.settings.image_1 | image_url: width: 80 }}"
-        alt="{{ block.settings.image_1.alt | escape }}"
-        loading="lazy">
-    </div>
+ {% if product.metafields.custom.divider_visible == true %}
     <div>
-      {% if block.settings.heading != blank %}
-        <h6>{{ block.settings.heading }}</h6>
-      {% endif %}
+      <div class="product-divider__block">
+        <div class="product-divider__image">
+          <img
+            src="{{ block.settings.image_1 | image_url: width: 80 }}"
+            alt="{{ block.settings.image_1.alt | escape }}"
+            loading="lazy">
+        </div>
+        <div>
+          {% if block.settings.heading != blank %}
+            <h6>{{ block.settings.heading }}</h6>
+          {% endif %}
+        </div>
+      </div>
     </div>
-  </div>
+{% endif %}
+
 </div>
 
 {% stylesheet %}

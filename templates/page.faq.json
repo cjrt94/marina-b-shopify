@@ -64,50 +64,11 @@
         "padding-block-start": 40,
         "padding-block-end": 100
       }
-    },
-    "ganeral_page_terms_E9GTQE": {
-      "type": "ganeral-page-terms",
-      "name": "General Page Terms",
-      "settings": {
-        "heading": "How We Use Your Personal Information",
-        "paragraph_1": "<p>We generally use the Order Information we collect to fulfill any orders placed through the site (including processing your payment information, organizing shipping, and sending invoices and/or order confirmations). Additionally, we use this Order Information to:<br/><br/></p><ul><li>Communicate with you;</li><li>Screen our orders for potential risks or fraud; and</li><li>When aligned with the preferences you have shared with us, provide you with information or advertising related to our products or services.  We use the Device Information we collect to help us screen for potential risks and fraud (in particular, your IP address) and, more generally, to improve and optimize our site (for example, by generating analytics about how our customers browse and interact with the site, and to assess the success of our marketing and advertising campaigns).</li></ul>",
-        "color_scheme": "",
-        "padding-block-start": 40,
-        "padding-block-end": 40
-      }
-    },
-    "ganeral_page_terms_LfhpNY": {
-      "type": "ganeral-page-terms",
-      "name": "General Page Terms",
-      "settings": {
-        "heading": "Sharing Your Personal Information",
-        "paragraph_1": "<p>We share your Personal Information with third parties to help us use your Personal Information, as described above. For example, we use Shopify to power our online store. You can learn more about how Shopify uses your Personal Information here: <a href=\"https://www.shopify.com/legal/privacy\" target=\"_blank\">https://www.shopify.com/legal/privacy</a>. We also use Google Analytics to help us understand how our customers use the site. You can learn more about how Google uses your Personal Information here: https://www.google.com/intl/en/policies/privacy/. You can also opt-out of Google Analytics here: <a href=\"https://tools.google.com/dlpage/gaoptout\" target=\"_blank\">https://tools.google.com/dlpage/gaoptout</a>.<br/><br/>Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant, or other legal request for information we receive, or otherwise to protect our rights.</p>",
-        "color_scheme": "",
-        "padding-block-start": 40,
-        "padding-block-end": 40
-      }
-    },
-    "divider_fF6ba9": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 1,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 32,
-        "padding-block-end": 16
-      }
     }
   },
   "order": [
     "main",
     "hero_ccNRNL",
-    "ganeral_page_terms_XgDyGJ",
-    "ganeral_page_terms_E9GTQE",
-    "ganeral_page_terms_LfhpNY",
-    "divider_fF6ba9"
+    "ganeral_page_terms_XgDyGJ"
   ]
 }

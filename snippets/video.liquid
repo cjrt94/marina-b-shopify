@@ -46,11 +46,11 @@
       assign video_src = 'https://www.youtube.com/embed/VIDEO_ID?' | replace: 'VIDEO_ID', video
 
       if video_autoplay == false and video_preview_image != blank
-        assign video_src = video_src | append: '&autoplay=1'
+        assign video_src = video_src | append: '&autoplay=1&playsinline'
       endif
 
       if video_autoplay
-        assign video_src = video_src | append: '&autoplay=1&mute=1'
+        assign video_src = video_src | append: '&autoplay=1&mute=1&playsinline'
       endif
 
       if video_loop
@@ -69,10 +69,10 @@
       endif
 
       if video_autoplay
-        assign video_src = video_src | append: '&autoplay=1&muted=1'
+        assign video_src = video_src | append: '&autoplay=1&muted=1&playsinline'
       endif
       if video_loop
-        assign video_src = video_src | append: '&loop=1'
+        assign video_src = video_src | append: '&loop=1&playsinline'
       endif
       if disable_controls
         assign video_src = video_src | append: '&controls=0'

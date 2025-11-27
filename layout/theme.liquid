@@ -36,6 +36,8 @@
     {% endif %}
 
     {{ content_for_header }}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
@@ -50,6 +52,12 @@
       async
       blocking="render"
     ></script>
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="lottie-container"></div>
+    </div>
+    <!--End-->
 
     <main
       id="MainContent"
@@ -74,10 +82,24 @@
     document.addEventListener("DOMContentLoaded", function() {
       const preloader = document.getElementById("preloader");
 
+      var animation = lottie.loadAnimation({
+        container: document.getElementById('lottie-container'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+       path: '{{ "marina logo.json" | asset_url }}',
+       rendererSettings: {
+        imagePreserveAspectRatio: 'xMidYMid slice',
+        assetsPath: '{{ " " | asset_url | split: "/" | slice: 0, -1 | join: "/" }}/' 
+        }
+      })
+
       // Mostrarlo un poco mientras carga la primera vez
       window.addEventListener("load", function() {
-       //  preloader.classList.add("hidden");
-      });
+        setTimeout(() =>{
+           preloader.classList.add("hidden");
+        }, 3700)
+      })
 
       // Para enlaces internos de Shopify (navegación AJAX / turbo links)
       document.querySelectorAll('a').forEach(link => {
@@ -88,7 +110,7 @@
           }
         });
       });
-    });
+    })
     </script>
 
   </body>
