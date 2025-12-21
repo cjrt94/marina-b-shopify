@@ -22,7 +22,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    >
 
     {%- render 'meta-tags' -%}
     {%- render 'stylesheets' -%}
@@ -57,7 +60,7 @@
     <div id="preloader">
       <div id="lottie-container"></div>
     </div>
-    <!--End-->
+    <!-- End -->
 
     <main
       id="MainContent"
@@ -79,29 +82,34 @@
     {% endif %}
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const preloader = document.getElementById("preloader");
+      document.addEventListener('DOMContentLoaded', function () {
+        const preloader = document.getElementById('preloader');
 
-      var animation = lottie.loadAnimation({
-        container: document.getElementById('lottie-container'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-       path: '{{ "marina logo.json" | asset_url }}',
-       rendererSettings: {
-        imagePreserveAspectRatio: 'xMidYMid slice',
-        assetsPath: '{{ " " | asset_url | split: "/" | slice: 0, -1 | join: "/" }}/' 
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('lottie-container'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: '{{ "marina logo.json" | asset_url }}',
+          rendererSettings: {
+            imagePreserveAspectRatio: 'xMidYMid slice',
+            assetsPath: '{{ " " | asset_url | split: "/" | slice: 0, -1 | join: "/" }}/',
+          },
+        });
+
+        // Mostrarlo un poco mientras carga la primera vez
+        const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
+        if (!isHome) {
+          preloader.classList.add('hidden');
+          return;
+        } else {
+          window.addEventListener('load', function () {
+            setTimeout(() => {
+              preloader.classList.add('hidden');
+            }, 3700)
+          })
         }
       })
-
-      // Mostrarlo un poco mientras carga la primera vez
-      window.addEventListener("load", function() {
-        setTimeout(() =>{
-           preloader.classList.add("hidden");
-        }, 3700)
-      })
-    })
     </script>
-
   </body>
 </html>
